@@ -1,0 +1,113 @@
+name: Publish port digital twin
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: false
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Check out current main
+        uses: actions/checkout@v7
+        with:
+          ref: main
+
+      - name: Import verified source once
+        id: import
+        if: ${{ hashFiles('docs/index.html') == '' }}
+        shell: bash
+        run: |
+          python3 - <<'PY'
+          import hashlib, json, os, re, stat, zipfile
+          from pathlib import Path
+
+          root = Path.cwd().resolve()
+          marker = root / 'SOURCE-MANIFEST.json'
+          if marker.exists() or marker.is_symlink():
+              raise SystemExit('Source was already imported. Restore docs/index.html in Git; the old archive will not overwrite later edits.')
+          archive = root / 'source-v15.zip'
+          expected = 'f0e309f09ec4ffa7912c9fab0d222a71b490f59a1c90674de2012228029229eb'
+          if hashlib.sha256(archive.read_bytes()).hexdigest() != expected:
+              raise SystemExit('Source archive SHA-256 mismatch.')
+          prefix = 'qingdao-port-digital-twin/'
+          payloads = {}
+          with zipfile.ZipFile(archive) as z:
+              infos = z.infolist()
+              names = [i.filename for i in infos]
+              if len(names) != len(set(names)) or sum(i.file_size for i in infos) > 30 * 1024 * 1024:
+                  raise SystemExit('Duplicate entries or oversized source archive.')
+              manifest_bytes = z.read(prefix + 'SOURCE-MANIFEST.json')
+              manifest = json.loads(manifest_bytes)
+              files = manifest.get('files')
+              if manifest.get('formatVersion') != 1 or not isinstance(files, dict) or len(files) != 75:
+                  raise SystemExit('Unexpected source manifest.')
+              if set(names) != {prefix + p for p in files} | {prefix + 'SOURCE-MANIFEST.json'}:
+                  raise SystemExit('Archive entries do not exactly match the manifest.')
+              for rel, digest in files.items():
+                  parts = rel.split('/')
+                  if (not rel or '\\' in rel or ':' in rel or any(ord(c) < 32 for c in rel)
+                      or any(p in ('', '.', '..') or p.lower() in ('.git', '.github') for p in parts)
+                      or not isinstance(digest, str) or not re.fullmatch('[0-9a-f]{64}', digest)):
+                      raise SystemExit('Unsafe path or invalid checksum in manifest.')
+                  info = z.getinfo(prefix + rel)
+                  mode = stat.S_IFMT(info.external_attr >> 16)
+                  if info.is_dir() or mode not in (0, stat.S_IFREG) or info.file_size > 10 * 1024 * 1024:
+                      raise SystemExit('Only bounded regular files may be imported.')
+                  target = root / rel
+                  if any(p.is_symlink() for p in (target, *target.parents)) or target.is_dir():
+                      raise SystemExit('Refusing to write through a symlink or replace a directory.')
+                  data = z.read(info)
+                  if hashlib.sha256(data).hexdigest() != digest:
+                      raise SystemExit('Source file SHA-256 mismatch: ' + rel)
+                  payloads[rel] = data
+          if 'docs/index.html' not in payloads or 'docs/vendor/ji-highs/highs.wasm' not in payloads:
+              raise SystemExit('Required static application files are missing.')
+          # Validate everything before writing; never execute code from the archive.
+          for rel, data in payloads.items():
+              target = root / rel
+              target.parent.mkdir(parents=True, exist_ok=True)
+              target.write_bytes(data)
+          marker.write_bytes(manifest_bytes)
+          with open(os.environ['GITHUB_OUTPUT'], 'a') as out:
+              out.write('imported=true\n')
+          print('Verified and imported 75 source files.')
+          PY
+
+      - name: Commit imported source to main
+        if: ${{ steps.import.outputs.imported == 'true' }}
+        shell: bash
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add docs research evidence scripts README.md package.json .gitignore SOURCE-MANIFEST.json
+          git commit -m "Import verified port digital twin source"
+          git push origin HEAD:main
+
+      - name: Verify static entry point
+        run: test -f docs/index.html
+
+      - name: Set up Pages
+        uses: actions/configure-pages@v5
+
+      - name: Upload static site
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: docs
+
+      - name: Deploy Pages
+        id: deployment
+        uses: actions/deploy-pages@v5
