@@ -1,0 +1,579 @@
+{
+  "passed": true,
+  "generatedAt": "2026-11-26T11:49:20.301Z",
+  "sourcePdfSha256": "7b1a516380527d72517dba7da72e24792f8e324bd4a0c241c62d8b7fc03647d3",
+  "sourcePdf": "Ji 等 - 2026 - Spatiotemporally coordinated scheduling of suspended monorail vehicles and AGVs under a double cycli.pdf",
+  "page": 7,
+  "method": "Extract original vector path dwell endpoints; round calibrated plotted integer-minute positions; independently check original base constraints",
+  "unit": "minutes",
+  "parameters": {
+    "handling": 2,
+    "smvImportToExport": 10,
+    "smvExportToImport": 1,
+    "agvExportToImport": 6,
+    "agvImportToExport": 1
+  },
+  "input": {
+    "total": 12,
+    "exports": 6,
+    "imports": 6,
+    "smv": 2,
+    "agv": 2,
+    "importUnits": 1,
+    "exportUnits": 1
+  },
+  "boundMinutes": 35,
+  "zoneNormalization": "Figure labels Track 1/2 are geometric labels. Bottom is normalized as export and top import to follow formal SMV export-first/import-last constraints. Text p6 describing same-direction AGV jobs in Fig4(b) appears direction-reversed under this normalization.",
+  "taskIds": "Normalized IDs for audit only; figure does not label container IDs.",
+  "waitingDefinition": "Sum of per-task vehicle dwell duration minus handling time, including initial/pre/post-service dwell. Does not count slack hidden in transfer intervals.",
+  "profiles": {
+    "baseline": {
+      "SMV1": [
+        {
+          "arrival": 0,
+          "departure": 2,
+          "zone": "export"
+        },
+        {
+          "arrival": 3,
+          "departure": 10,
+          "zone": "import"
+        },
+        {
+          "arrival": 20,
+          "departure": 22,
+          "zone": "export"
+        },
+        {
+          "arrival": 23,
+          "departure": 30,
+          "zone": "import"
+        },
+        {
+          "arrival": 40,
+          "departure": 42,
+          "zone": "export"
+        },
+        {
+          "arrival": 43,
+          "departure": 50,
+          "zone": "import"
+        }
+      ],
+      "SMV2": [
+        {
+          "arrival": 2,
+          "departure": 9,
+          "zone": "export"
+        },
+        {
+          "arrival": 10,
+          "departure": 12,
+          "zone": "import"
+        },
+        {
+          "arrival": 22,
+          "departure": 29,
+          "zone": "export"
+        },
+        {
+          "arrival": 30,
+          "departure": 32,
+          "zone": "import"
+        },
+        {
+          "arrival": 42,
+          "departure": 49,
+          "zone": "export"
+        },
+        {
+          "arrival": 50,
+          "departure": 52,
+          "zone": "import"
+        }
+      ],
+      "AGV1": [
+        {
+          "arrival": 0,
+          "departure": 2,
+          "zone": "export"
+        },
+        {
+          "arrival": 8,
+          "departure": 10,
+          "zone": "import"
+        },
+        {
+          "arrival": 11,
+          "departure": 22,
+          "zone": "export"
+        },
+        {
+          "arrival": 28,
+          "departure": 30,
+          "zone": "import"
+        },
+        {
+          "arrival": 31,
+          "departure": 42,
+          "zone": "export"
+        },
+        {
+          "arrival": 48,
+          "departure": 50,
+          "zone": "import"
+        }
+      ],
+      "AGV2": [
+        {
+          "arrival": 2,
+          "departure": 4,
+          "zone": "export"
+        },
+        {
+          "arrival": 10,
+          "departure": 21,
+          "zone": "import"
+        },
+        {
+          "arrival": 22,
+          "departure": 24,
+          "zone": "export"
+        },
+        {
+          "arrival": 30,
+          "departure": 41,
+          "zone": "import"
+        },
+        {
+          "arrival": 42,
+          "departure": 44,
+          "zone": "export"
+        },
+        {
+          "arrival": 50,
+          "departure": 52,
+          "zone": "import"
+        }
+      ]
+    },
+    "double": {
+      "SMV1": [
+        {
+          "arrival": 0,
+          "departure": 2,
+          "zone": "export"
+        },
+        {
+          "arrival": 3,
+          "departure": 5,
+          "zone": "import"
+        },
+        {
+          "arrival": 15,
+          "departure": 17,
+          "zone": "export"
+        },
+        {
+          "arrival": 18,
+          "departure": 20,
+          "zone": "import"
+        },
+        {
+          "arrival": 30,
+          "departure": 32,
+          "zone": "export"
+        },
+        {
+          "arrival": 33,
+          "departure": 35,
+          "zone": "import"
+        }
+      ],
+      "SMV2": [
+        {
+          "arrival": 2,
+          "departure": 8,
+          "zone": "export"
+        },
+        {
+          "arrival": 9,
+          "departure": 11,
+          "zone": "import"
+        },
+        {
+          "arrival": 21,
+          "departure": 23,
+          "zone": "export"
+        },
+        {
+          "arrival": 24,
+          "departure": 26,
+          "zone": "import"
+        },
+        {
+          "arrival": 36,
+          "departure": 38,
+          "zone": "export"
+        },
+        {
+          "arrival": 39,
+          "departure": 41,
+          "zone": "import"
+        }
+      ],
+      "AGV1": [
+        {
+          "arrival": 0,
+          "departure": 2,
+          "zone": "export"
+        },
+        {
+          "arrival": 8,
+          "departure": 11,
+          "zone": "import"
+        },
+        {
+          "arrival": 12,
+          "departure": 18,
+          "zone": "export"
+        },
+        {
+          "arrival": 24,
+          "departure": 29,
+          "zone": "import"
+        },
+        {
+          "arrival": 30,
+          "departure": 32,
+          "zone": "export"
+        },
+        {
+          "arrival": 39,
+          "departure": 41,
+          "zone": "import"
+        }
+      ],
+      "AGV2": [
+        {
+          "arrival": 0,
+          "departure": 5,
+          "zone": "import"
+        },
+        {
+          "arrival": 6,
+          "departure": 8,
+          "zone": "export"
+        },
+        {
+          "arrival": 18,
+          "departure": 20,
+          "zone": "import"
+        },
+        {
+          "arrival": 21,
+          "departure": 27,
+          "zone": "export"
+        },
+        {
+          "arrival": 33,
+          "departure": 35,
+          "zone": "import"
+        },
+        {
+          "arrival": 36,
+          "departure": 38,
+          "zone": "export"
+        }
+      ]
+    }
+  },
+  "baseline": {
+    "makespanMinutes": 52,
+    "waitingDeviceMinutes": 66,
+    "perVehicleWaiting": {
+      "SMV1": 15,
+      "SMV2": 15,
+      "AGV1": 18,
+      "AGV2": 18
+    },
+    "tasks": [
+      {
+        "id": "normalized-SMV1-1",
+        "direction": "export",
+        "smv": "SMV1",
+        "agv": "AGV1",
+        "smvArrival": 0,
+        "smvDeparture": 2,
+        "agvArrival": 0,
+        "agvDeparture": 2,
+        "overlap": 2
+      },
+      {
+        "id": "normalized-SMV1-2",
+        "direction": "import",
+        "smv": "SMV1",
+        "agv": "AGV1",
+        "smvArrival": 3,
+        "smvDeparture": 10,
+        "agvArrival": 8,
+        "agvDeparture": 10,
+        "overlap": 2
+      },
+      {
+        "id": "normalized-SMV1-3",
+        "direction": "export",
+        "smv": "SMV1",
+        "agv": "AGV1",
+        "smvArrival": 20,
+        "smvDeparture": 22,
+        "agvArrival": 11,
+        "agvDeparture": 22,
+        "overlap": 2
+      },
+      {
+        "id": "normalized-SMV1-4",
+        "direction": "import",
+        "smv": "SMV1",
+        "agv": "AGV1",
+        "smvArrival": 23,
+        "smvDeparture": 30,
+        "agvArrival": 28,
+        "agvDeparture": 30,
+        "overlap": 2
+      },
+      {
+        "id": "normalized-SMV1-5",
+        "direction": "export",
+        "smv": "SMV1",
+        "agv": "AGV1",
+        "smvArrival": 40,
+        "smvDeparture": 42,
+        "agvArrival": 31,
+        "agvDeparture": 42,
+        "overlap": 2
+      },
+      {
+        "id": "normalized-SMV1-6",
+        "direction": "import",
+        "smv": "SMV1",
+        "agv": "AGV1",
+        "smvArrival": 43,
+        "smvDeparture": 50,
+        "agvArrival": 48,
+        "agvDeparture": 50,
+        "overlap": 2
+      },
+      {
+        "id": "normalized-SMV2-1",
+        "direction": "export",
+        "smv": "SMV2",
+        "agv": "AGV2",
+        "smvArrival": 2,
+        "smvDeparture": 9,
+        "agvArrival": 2,
+        "agvDeparture": 4,
+        "overlap": 2
+      },
+      {
+        "id": "normalized-SMV2-2",
+        "direction": "import",
+        "smv": "SMV2",
+        "agv": "AGV2",
+        "smvArrival": 10,
+        "smvDeparture": 12,
+        "agvArrival": 10,
+        "agvDeparture": 21,
+        "overlap": 2
+      },
+      {
+        "id": "normalized-SMV2-3",
+        "direction": "export",
+        "smv": "SMV2",
+        "agv": "AGV2",
+        "smvArrival": 22,
+        "smvDeparture": 29,
+        "agvArrival": 22,
+        "agvDeparture": 24,
+        "overlap": 2
+      },
+      {
+        "id": "normalized-SMV2-4",
+        "direction": "import",
+        "smv": "SMV2",
+        "agv": "AGV2",
+        "smvArrival": 30,
+        "smvDeparture": 32,
+        "agvArrival": 30,
+        "agvDeparture": 41,
+        "overlap": 2
+      },
+      {
+        "id": "normalized-SMV2-5",
+        "direction": "export",
+        "smv": "SMV2",
+        "agv": "AGV2",
+        "smvArrival": 42,
+        "smvDeparture": 49,
+        "agvArrival": 42,
+        "agvDeparture": 44,
+        "overlap": 2
+      },
+      {
+        "id": "normalized-SMV2-6",
+        "direction": "import",
+        "smv": "SMV2",
+        "agv": "AGV2",
+        "smvArrival": 50,
+        "smvDeparture": 52,
+        "agvArrival": 50,
+        "agvDeparture": 52,
+        "overlap": 2
+      }
+    ]
+  },
+  "double": {
+    "makespanMinutes": 41,
+    "waitingDeviceMinutes": 19,
+    "perVehicleWaiting": {
+      "SMV1": 0,
+      "SMV2": 4,
+      "AGV1": 8,
+      "AGV2": 7
+    },
+    "tasks": [
+      {
+        "id": "normalized-SMV1-1",
+        "direction": "export",
+        "smv": "SMV1",
+        "agv": "AGV1",
+        "smvArrival": 0,
+        "smvDeparture": 2,
+        "agvArrival": 0,
+        "agvDeparture": 2,
+        "overlap": 2
+      },
+      {
+        "id": "normalized-SMV1-2",
+        "direction": "import",
+        "smv": "SMV1",
+        "agv": "AGV2",
+        "smvArrival": 3,
+        "smvDeparture": 5,
+        "agvArrival": 0,
+        "agvDeparture": 5,
+        "overlap": 2
+      },
+      {
+        "id": "normalized-SMV1-3",
+        "direction": "export",
+        "smv": "SMV1",
+        "agv": "AGV1",
+        "smvArrival": 15,
+        "smvDeparture": 17,
+        "agvArrival": 12,
+        "agvDeparture": 18,
+        "overlap": 2
+      },
+      {
+        "id": "normalized-SMV1-4",
+        "direction": "import",
+        "smv": "SMV1",
+        "agv": "AGV2",
+        "smvArrival": 18,
+        "smvDeparture": 20,
+        "agvArrival": 18,
+        "agvDeparture": 20,
+        "overlap": 2
+      },
+      {
+        "id": "normalized-SMV1-5",
+        "direction": "export",
+        "smv": "SMV1",
+        "agv": "AGV1",
+        "smvArrival": 30,
+        "smvDeparture": 32,
+        "agvArrival": 30,
+        "agvDeparture": 32,
+        "overlap": 2
+      },
+      {
+        "id": "normalized-SMV1-6",
+        "direction": "import",
+        "smv": "SMV1",
+        "agv": "AGV2",
+        "smvArrival": 33,
+        "smvDeparture": 35,
+        "agvArrival": 33,
+        "agvDeparture": 35,
+        "overlap": 2
+      },
+      {
+        "id": "normalized-SMV2-1",
+        "direction": "export",
+        "smv": "SMV2",
+        "agv": "AGV2",
+        "smvArrival": 2,
+        "smvDeparture": 8,
+        "agvArrival": 6,
+        "agvDeparture": 8,
+        "overlap": 2
+      },
+      {
+        "id": "normalized-SMV2-2",
+        "direction": "import",
+        "smv": "SMV2",
+        "agv": "AGV1",
+        "smvArrival": 9,
+        "smvDeparture": 11,
+        "agvArrival": 8,
+        "agvDeparture": 11,
+        "overlap": 2
+      },
+      {
+        "id": "normalized-SMV2-3",
+        "direction": "export",
+        "smv": "SMV2",
+        "agv": "AGV2",
+        "smvArrival": 21,
+        "smvDeparture": 23,
+        "agvArrival": 21,
+        "agvDeparture": 27,
+        "overlap": 2
+      },
+      {
+        "id": "normalized-SMV2-4",
+        "direction": "import",
+        "smv": "SMV2",
+        "agv": "AGV1",
+        "smvArrival": 24,
+        "smvDeparture": 26,
+        "agvArrival": 24,
+        "agvDeparture": 29,
+        "overlap": 2
+      },
+      {
+        "id": "normalized-SMV2-5",
+        "direction": "export",
+        "smv": "SMV2",
+        "agv": "AGV2",
+        "smvArrival": 36,
+        "smvDeparture": 38,
+        "agvArrival": 36,
+        "agvDeparture": 38,
+        "overlap": 2
+      },
+      {
+        "id": "normalized-SMV2-6",
+        "direction": "import",
+        "smv": "SMV2",
+        "agv": "AGV1",
+        "smvArrival": 39,
+        "smvDeparture": 41,
+        "agvArrival": 39,
+        "agvDeparture": 41,
+        "overlap": 2
+      }
+    ]
+  }
+}

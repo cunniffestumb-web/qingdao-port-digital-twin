@@ -1,0 +1,705 @@
+{
+  "scope": "Ji et al. Section 6 small-scale 20-task configuration; published 71 min; solved independently from inputs.",
+  "format": "port-sim-ji-optimization",
+  "version": 1,
+  "config": {
+    "pairs": 10,
+    "smvs": 2,
+    "agvs": 2,
+    "importLanes": 2,
+    "exportLanes": 2,
+    "T0": 2,
+    "T1": 10,
+    "T2": 1,
+    "T3": 6,
+    "T4": 1,
+    "nodeLimit": 2000000,
+    "timeLimitSec": 60
+  },
+  "status": "optimal",
+  "solver": {
+    "name": "HiGHS",
+    "version": "1.16.0",
+    "method": "时间展开 MILP 分支切割与原式定序 LP"
+  },
+  "cmax": 71,
+  "lowerBound": 71,
+  "upperBound": 71,
+  "gap": 0,
+  "elapsedMs": 14433.503708,
+  "stats": {
+    "nodes": 7,
+    "variables": 1986,
+    "constraints": 1266,
+    "trials": [
+      {
+        "horizon": 127,
+        "status": "feasible",
+        "nodes": 1,
+        "elapsedMs": 4704.107875000001
+      },
+      {
+        "horizon": 95,
+        "status": "feasible",
+        "nodes": 1,
+        "elapsedMs": 7370.451833000001
+      },
+      {
+        "horizon": 79,
+        "status": "feasible",
+        "nodes": 1,
+        "elapsedMs": 1910.1787920000006
+      },
+      {
+        "horizon": 69,
+        "status": "infeasible",
+        "nodes": 1,
+        "elapsedMs": 102.55587500000001
+      },
+      {
+        "horizon": 72,
+        "status": "feasible",
+        "nodes": 1,
+        "elapsedMs": 119.8153340000008
+      },
+      {
+        "horizon": 70,
+        "status": "infeasible",
+        "nodes": 1,
+        "elapsedMs": 101.1416250000002
+      },
+      {
+        "horizon": 71,
+        "status": "feasible",
+        "nodes": 1,
+        "elapsedMs": 74.26337500000045
+      }
+    ],
+    "theoreticalBound": 65,
+    "loadMs": 27.511083,
+    "timeLimitSec": 60,
+    "nodeLimit": 2000000
+  },
+  "provenance": {
+    "doi": "10.1016/j.tre.2025.104485",
+    "objective": "min Cmax",
+    "timeUnit": "min",
+    "model": "Ji equations (1)–(35), homogeneous balanced transfer tasks",
+    "proof": "Integer time-expanded MILP; feasible deadlines provide audited upper bounds; proved infeasible H implies Cmax >= H+1.",
+    "waiting": "Sum over assigned vehicles and tasks of departure minus arrival minus T0. Waiting is reported, not optimized."
+  },
+  "rows": [
+    {
+      "id": "E1",
+      "direction": "export",
+      "smv": "SMV-1",
+      "agv": "AGV-1",
+      "lane": "L2-1",
+      "smvArrival": 0,
+      "smvDeparture": 2,
+      "agvArrival": 0,
+      "agvDeparture": 2,
+      "start": 0,
+      "end": 2
+    },
+    {
+      "id": "I1",
+      "direction": "import",
+      "smv": "SMV-1",
+      "agv": "AGV-2",
+      "lane": "L1-1",
+      "smvArrival": 3,
+      "smvDeparture": 5,
+      "agvArrival": 0,
+      "agvDeparture": 5,
+      "start": 3,
+      "end": 5
+    },
+    {
+      "id": "E2",
+      "direction": "export",
+      "smv": "SMV-2",
+      "agv": "AGV-2",
+      "lane": "L2-2",
+      "smvArrival": 0,
+      "smvDeparture": 8,
+      "agvArrival": 6,
+      "agvDeparture": 8,
+      "start": 6,
+      "end": 8
+    },
+    {
+      "id": "I2",
+      "direction": "import",
+      "smv": "SMV-2",
+      "agv": "AGV-1",
+      "lane": "L1-2",
+      "smvArrival": 9,
+      "smvDeparture": 11,
+      "agvArrival": 8,
+      "agvDeparture": 11,
+      "start": 9,
+      "end": 11
+    },
+    {
+      "id": "E3",
+      "direction": "export",
+      "smv": "SMV-1",
+      "agv": "AGV-1",
+      "lane": "L2-1",
+      "smvArrival": 15,
+      "smvDeparture": 17,
+      "agvArrival": 12,
+      "agvDeparture": 17,
+      "start": 15,
+      "end": 17
+    },
+    {
+      "id": "I3",
+      "direction": "import",
+      "smv": "SMV-1",
+      "agv": "AGV-2",
+      "lane": "L1-1",
+      "smvArrival": 18,
+      "smvDeparture": 20,
+      "agvArrival": 14,
+      "agvDeparture": 20,
+      "start": 18,
+      "end": 20
+    },
+    {
+      "id": "E4",
+      "direction": "export",
+      "smv": "SMV-2",
+      "agv": "AGV-2",
+      "lane": "L2-1",
+      "smvArrival": 21,
+      "smvDeparture": 23,
+      "agvArrival": 21,
+      "agvDeparture": 23,
+      "start": 21,
+      "end": 23
+    },
+    {
+      "id": "I4",
+      "direction": "import",
+      "smv": "SMV-2",
+      "agv": "AGV-1",
+      "lane": "L1-1",
+      "smvArrival": 24,
+      "smvDeparture": 26,
+      "agvArrival": 23,
+      "agvDeparture": 26,
+      "start": 24,
+      "end": 26
+    },
+    {
+      "id": "E5",
+      "direction": "export",
+      "smv": "SMV-1",
+      "agv": "AGV-1",
+      "lane": "L2-1",
+      "smvArrival": 30,
+      "smvDeparture": 32,
+      "agvArrival": 27,
+      "agvDeparture": 32,
+      "start": 30,
+      "end": 32
+    },
+    {
+      "id": "I5",
+      "direction": "import",
+      "smv": "SMV-1",
+      "agv": "AGV-2",
+      "lane": "L1-1",
+      "smvArrival": 33,
+      "smvDeparture": 35,
+      "agvArrival": 29,
+      "agvDeparture": 35,
+      "start": 33,
+      "end": 35
+    },
+    {
+      "id": "E6",
+      "direction": "export",
+      "smv": "SMV-2",
+      "agv": "AGV-2",
+      "lane": "L2-1",
+      "smvArrival": 36,
+      "smvDeparture": 38,
+      "agvArrival": 36,
+      "agvDeparture": 38,
+      "start": 36,
+      "end": 38
+    },
+    {
+      "id": "I6",
+      "direction": "import",
+      "smv": "SMV-2",
+      "agv": "AGV-1",
+      "lane": "L1-1",
+      "smvArrival": 39,
+      "smvDeparture": 41,
+      "agvArrival": 38,
+      "agvDeparture": 41,
+      "start": 39,
+      "end": 41
+    },
+    {
+      "id": "E7",
+      "direction": "export",
+      "smv": "SMV-1",
+      "agv": "AGV-1",
+      "lane": "L2-1",
+      "smvArrival": 45,
+      "smvDeparture": 47,
+      "agvArrival": 42,
+      "agvDeparture": 47,
+      "start": 45,
+      "end": 47
+    },
+    {
+      "id": "I7",
+      "direction": "import",
+      "smv": "SMV-1",
+      "agv": "AGV-2",
+      "lane": "L1-1",
+      "smvArrival": 48,
+      "smvDeparture": 50,
+      "agvArrival": 44,
+      "agvDeparture": 50,
+      "start": 48,
+      "end": 50
+    },
+    {
+      "id": "E8",
+      "direction": "export",
+      "smv": "SMV-2",
+      "agv": "AGV-2",
+      "lane": "L2-1",
+      "smvArrival": 51,
+      "smvDeparture": 53,
+      "agvArrival": 51,
+      "agvDeparture": 53,
+      "start": 51,
+      "end": 53
+    },
+    {
+      "id": "I8",
+      "direction": "import",
+      "smv": "SMV-2",
+      "agv": "AGV-1",
+      "lane": "L1-1",
+      "smvArrival": 54,
+      "smvDeparture": 56,
+      "agvArrival": 53,
+      "agvDeparture": 56,
+      "start": 54,
+      "end": 56
+    },
+    {
+      "id": "E9",
+      "direction": "export",
+      "smv": "SMV-1",
+      "agv": "AGV-1",
+      "lane": "L2-1",
+      "smvArrival": 60,
+      "smvDeparture": 62,
+      "agvArrival": 57,
+      "agvDeparture": 62,
+      "start": 60,
+      "end": 62
+    },
+    {
+      "id": "I9",
+      "direction": "import",
+      "smv": "SMV-1",
+      "agv": "AGV-2",
+      "lane": "L1-1",
+      "smvArrival": 63,
+      "smvDeparture": 65,
+      "agvArrival": 59,
+      "agvDeparture": 65,
+      "start": 63,
+      "end": 65
+    },
+    {
+      "id": "E10",
+      "direction": "export",
+      "smv": "SMV-2",
+      "agv": "AGV-2",
+      "lane": "L2-1",
+      "smvArrival": 66,
+      "smvDeparture": 68,
+      "agvArrival": 66,
+      "agvDeparture": 68,
+      "start": 66,
+      "end": 68
+    },
+    {
+      "id": "I10",
+      "direction": "import",
+      "smv": "SMV-2",
+      "agv": "AGV-1",
+      "lane": "L1-1",
+      "smvArrival": 69,
+      "smvDeparture": 71,
+      "agvArrival": 68,
+      "agvDeparture": 71,
+      "start": 69,
+      "end": 71
+    }
+  ],
+  "audit": {
+    "passed": true,
+    "checks": [
+      {
+        "id": "tasks",
+        "label": "任务唯一分配",
+        "passed": true,
+        "detail": "式 2、8 · 20 箱"
+      },
+      {
+        "id": "time",
+        "label": "到离时刻与联合交接",
+        "passed": true,
+        "detail": "式 15、19、31–34 · 共同处理至少 2 分钟"
+      },
+      {
+        "id": "smv",
+        "label": "SMV 序列与最短转场",
+        "passed": true,
+        "detail": "式 3–7、16–17 · 出口起、进口止"
+      },
+      {
+        "id": "agv",
+        "label": "AGV 序列与最短转场",
+        "passed": true,
+        "detail": "式 9–13、20–21 · 首尾方向自由，连续任务交替"
+      },
+      {
+        "id": "tracks",
+        "label": "方向匹配与悬轨占用互斥",
+        "passed": true,
+        "detail": "式 18、22–30 · 每条作业道均使用"
+      },
+      {
+        "id": "cmax",
+        "label": "末台 SMV 离开时刻",
+        "passed": true,
+        "detail": "式 1、14 · Cmax = max SMV departure"
+      }
+    ]
+  },
+  "waiting": 42,
+  "baseline": {
+    "label": "同输入顺序预派工",
+    "rows": [
+      {
+        "id": "E1",
+        "direction": "export",
+        "smv": "SMV-1",
+        "agv": "AGV-1",
+        "lane": "L2-1",
+        "smvArrival": 0,
+        "smvDeparture": 2,
+        "agvArrival": 0,
+        "agvDeparture": 2,
+        "start": 0,
+        "end": 2
+      },
+      {
+        "id": "I1",
+        "direction": "import",
+        "smv": "SMV-1",
+        "agv": "AGV-1",
+        "lane": "L1-1",
+        "smvArrival": 8,
+        "smvDeparture": 10,
+        "agvArrival": 8,
+        "agvDeparture": 10,
+        "start": 8,
+        "end": 10
+      },
+      {
+        "id": "E2",
+        "direction": "export",
+        "smv": "SMV-1",
+        "agv": "AGV-1",
+        "lane": "L2-2",
+        "smvArrival": 20,
+        "smvDeparture": 22,
+        "agvArrival": 20,
+        "agvDeparture": 22,
+        "start": 20,
+        "end": 22
+      },
+      {
+        "id": "I2",
+        "direction": "import",
+        "smv": "SMV-1",
+        "agv": "AGV-1",
+        "lane": "L1-2",
+        "smvArrival": 28,
+        "smvDeparture": 30,
+        "agvArrival": 28,
+        "agvDeparture": 30,
+        "start": 28,
+        "end": 30
+      },
+      {
+        "id": "E3",
+        "direction": "export",
+        "smv": "SMV-1",
+        "agv": "AGV-1",
+        "lane": "L2-1",
+        "smvArrival": 40,
+        "smvDeparture": 42,
+        "agvArrival": 40,
+        "agvDeparture": 42,
+        "start": 40,
+        "end": 42
+      },
+      {
+        "id": "I3",
+        "direction": "import",
+        "smv": "SMV-1",
+        "agv": "AGV-1",
+        "lane": "L1-1",
+        "smvArrival": 48,
+        "smvDeparture": 50,
+        "agvArrival": 48,
+        "agvDeparture": 50,
+        "start": 48,
+        "end": 50
+      },
+      {
+        "id": "E4",
+        "direction": "export",
+        "smv": "SMV-1",
+        "agv": "AGV-1",
+        "lane": "L2-2",
+        "smvArrival": 60,
+        "smvDeparture": 62,
+        "agvArrival": 60,
+        "agvDeparture": 62,
+        "start": 60,
+        "end": 62
+      },
+      {
+        "id": "I4",
+        "direction": "import",
+        "smv": "SMV-1",
+        "agv": "AGV-1",
+        "lane": "L1-2",
+        "smvArrival": 68,
+        "smvDeparture": 70,
+        "agvArrival": 68,
+        "agvDeparture": 70,
+        "start": 68,
+        "end": 70
+      },
+      {
+        "id": "E5",
+        "direction": "export",
+        "smv": "SMV-1",
+        "agv": "AGV-1",
+        "lane": "L2-1",
+        "smvArrival": 80,
+        "smvDeparture": 82,
+        "agvArrival": 80,
+        "agvDeparture": 82,
+        "start": 80,
+        "end": 82
+      },
+      {
+        "id": "I5",
+        "direction": "import",
+        "smv": "SMV-1",
+        "agv": "AGV-1",
+        "lane": "L1-1",
+        "smvArrival": 88,
+        "smvDeparture": 90,
+        "agvArrival": 88,
+        "agvDeparture": 90,
+        "start": 88,
+        "end": 90
+      },
+      {
+        "id": "E6",
+        "direction": "export",
+        "smv": "SMV-2",
+        "agv": "AGV-2",
+        "lane": "L2-2",
+        "smvArrival": 100,
+        "smvDeparture": 102,
+        "agvArrival": 100,
+        "agvDeparture": 102,
+        "start": 100,
+        "end": 102
+      },
+      {
+        "id": "I6",
+        "direction": "import",
+        "smv": "SMV-2",
+        "agv": "AGV-2",
+        "lane": "L1-2",
+        "smvArrival": 108,
+        "smvDeparture": 110,
+        "agvArrival": 108,
+        "agvDeparture": 110,
+        "start": 108,
+        "end": 110
+      },
+      {
+        "id": "E7",
+        "direction": "export",
+        "smv": "SMV-2",
+        "agv": "AGV-2",
+        "lane": "L2-1",
+        "smvArrival": 120,
+        "smvDeparture": 122,
+        "agvArrival": 120,
+        "agvDeparture": 122,
+        "start": 120,
+        "end": 122
+      },
+      {
+        "id": "I7",
+        "direction": "import",
+        "smv": "SMV-2",
+        "agv": "AGV-2",
+        "lane": "L1-1",
+        "smvArrival": 128,
+        "smvDeparture": 130,
+        "agvArrival": 128,
+        "agvDeparture": 130,
+        "start": 128,
+        "end": 130
+      },
+      {
+        "id": "E8",
+        "direction": "export",
+        "smv": "SMV-2",
+        "agv": "AGV-2",
+        "lane": "L2-2",
+        "smvArrival": 140,
+        "smvDeparture": 142,
+        "agvArrival": 140,
+        "agvDeparture": 142,
+        "start": 140,
+        "end": 142
+      },
+      {
+        "id": "I8",
+        "direction": "import",
+        "smv": "SMV-2",
+        "agv": "AGV-2",
+        "lane": "L1-2",
+        "smvArrival": 148,
+        "smvDeparture": 150,
+        "agvArrival": 148,
+        "agvDeparture": 150,
+        "start": 148,
+        "end": 150
+      },
+      {
+        "id": "E9",
+        "direction": "export",
+        "smv": "SMV-2",
+        "agv": "AGV-2",
+        "lane": "L2-1",
+        "smvArrival": 160,
+        "smvDeparture": 162,
+        "agvArrival": 160,
+        "agvDeparture": 162,
+        "start": 160,
+        "end": 162
+      },
+      {
+        "id": "I9",
+        "direction": "import",
+        "smv": "SMV-2",
+        "agv": "AGV-2",
+        "lane": "L1-1",
+        "smvArrival": 168,
+        "smvDeparture": 170,
+        "agvArrival": 168,
+        "agvDeparture": 170,
+        "start": 168,
+        "end": 170
+      },
+      {
+        "id": "E10",
+        "direction": "export",
+        "smv": "SMV-2",
+        "agv": "AGV-2",
+        "lane": "L2-2",
+        "smvArrival": 180,
+        "smvDeparture": 182,
+        "agvArrival": 180,
+        "agvDeparture": 182,
+        "start": 180,
+        "end": 182
+      },
+      {
+        "id": "I10",
+        "direction": "import",
+        "smv": "SMV-2",
+        "agv": "AGV-2",
+        "lane": "L1-2",
+        "smvArrival": 188,
+        "smvDeparture": 190,
+        "agvArrival": 188,
+        "agvDeparture": 190,
+        "start": 188,
+        "end": 190
+      }
+    ],
+    "cmax": 190,
+    "waiting": 0,
+    "audit": {
+      "passed": true,
+      "checks": [
+        {
+          "id": "tasks",
+          "label": "任务唯一分配",
+          "passed": true,
+          "detail": "式 2、8 · 20 箱"
+        },
+        {
+          "id": "time",
+          "label": "到离时刻与联合交接",
+          "passed": true,
+          "detail": "式 15、19、31–34 · 共同处理至少 2 分钟"
+        },
+        {
+          "id": "smv",
+          "label": "SMV 序列与最短转场",
+          "passed": true,
+          "detail": "式 3–7、16–17 · 出口起、进口止"
+        },
+        {
+          "id": "agv",
+          "label": "AGV 序列与最短转场",
+          "passed": true,
+          "detail": "式 9–13、20–21 · 首尾方向自由，连续任务交替"
+        },
+        {
+          "id": "tracks",
+          "label": "方向匹配与悬轨占用互斥",
+          "passed": true,
+          "detail": "式 18、22–30 · 每条作业道均使用"
+        },
+        {
+          "id": "cmax",
+          "label": "末台 SMV 离开时刻",
+          "passed": true,
+          "detail": "式 1、14 · Cmax = max SMV departure"
+        }
+      ]
+    }
+  },
+  "paperSchedule": null,
+  "paper": null
+}

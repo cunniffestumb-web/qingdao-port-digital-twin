@@ -1,0 +1,2373 @@
+{
+  "passed": true,
+  "generatedAt": "2026-11-26T12:05:26.857Z",
+  "sourceHash": {
+    "ji-model.mjs": "4e7965590654c2a2650438f793bec7c814c6405d87c381e052eafa27a6acb1ae",
+    "ji-grid.mjs": "70b8bf9ba15dcdc0bc4dfef9b78ef01577981f7b2b4d80f1da3fd446866f1736",
+    "ji-reference.mjs": "c85dca900369bd40c7e36619c75ac552790d89c72b8a6806903d441729d98d70",
+    "ji-runner.mjs": "e4ac1cdabed8b992301742a31edbe4d1f6fa8e85972546cc092a26f287e70811",
+    "ji-worker.mjs": "a549e535d81dbaf11923447f0898fccd2ffdebac2a69bc868553e940a0804d88",
+    "vendor/ji-highs/highs.mjs": "2ff9053ac85e9474a4ad9b373c5ed85b71e3c49c549b61d4551301debb6bbaf5",
+    "vendor/ji-highs/highs.wasm": "69a85477acde13876c8fe83357959724e795abdfd144af0531f920d41b5f813e"
+  },
+  "method": "Independent exhaustive earliest-service sequence search with homogeneous-resource symmetry and componentwise dominance; no production validator or MILP builder is reused",
+  "proof": "Original joint dwell can contract to a common T0 interval without increasing Cmax. For any fixed three resource orders, earliest difference-constraint times are integral when T0–T4 are integer. Enumerating all admissible service orders at H-1 proves the integer optimum lower bound. Capacity pruning uses only remaining SMV alternating pairs; unused vehicles/lanes are enforced.",
+  "results": [
+    {
+      "name": "original Figure4",
+      "config": {
+        "pairs": 6,
+        "smvs": 2,
+        "agvs": 2,
+        "importLanes": 1,
+        "exportLanes": 1,
+        "T0": 2,
+        "T1": 10,
+        "T2": 1,
+        "T3": 6,
+        "T4": 1,
+        "nodeLimit": 2000000,
+        "timeLimitSec": 30
+      },
+      "cmax": 41,
+      "waiting": 24,
+      "solverStatus": "optimal",
+      "productionNodes": 6,
+      "trials": [
+        {
+          "horizon": 72,
+          "status": "feasible",
+          "nodes": 1,
+          "elapsedMs": 1562.440708
+        },
+        {
+          "horizon": 53,
+          "status": "feasible",
+          "nodes": 1,
+          "elapsedMs": 1493.9795829999998
+        },
+        {
+          "horizon": 42,
+          "status": "feasible",
+          "nodes": 1,
+          "elapsedMs": 72.46862499999997
+        },
+        {
+          "horizon": 38,
+          "status": "infeasible",
+          "nodes": 1,
+          "elapsedMs": 65.25554199999988
+        },
+        {
+          "horizon": 40,
+          "status": "infeasible",
+          "nodes": 1,
+          "elapsedMs": 62.69808299999977
+        },
+        {
+          "horizon": 41,
+          "status": "feasible",
+          "nodes": 1,
+          "elapsedMs": 53.71287499999971
+        }
+      ],
+      "independentBelow": {
+        "feasible": false,
+        "limited": false,
+        "complete": true,
+        "nodes": 50,
+        "dominated": 3,
+        "pruned": 23,
+        "memoGroups": 16,
+        "elapsedMs": 13.168083999999908
+      },
+      "independentAt": {
+        "feasible": true,
+        "limited": false,
+        "complete": true,
+        "nodes": 38,
+        "dominated": 0,
+        "pruned": 14,
+        "memoGroups": 18,
+        "elapsedMs": 0.5343749999997272
+      },
+      "audit": {
+        "passed": true,
+        "waitingDeviceMinutes": 24,
+        "tasks": 12
+      },
+      "rows": [
+        {
+          "id": "E1",
+          "direction": "export",
+          "smv": "SMV-1",
+          "agv": "AGV-1",
+          "lane": "L2-1",
+          "smvArrival": 0,
+          "smvDeparture": 2,
+          "agvArrival": 0,
+          "agvDeparture": 2,
+          "start": 0,
+          "end": 2
+        },
+        {
+          "id": "I1",
+          "direction": "import",
+          "smv": "SMV-1",
+          "agv": "AGV-2",
+          "lane": "L1-1",
+          "smvArrival": 3,
+          "smvDeparture": 5,
+          "agvArrival": 0,
+          "agvDeparture": 5,
+          "start": 3,
+          "end": 5
+        },
+        {
+          "id": "E2",
+          "direction": "export",
+          "smv": "SMV-2",
+          "agv": "AGV-2",
+          "lane": "L2-1",
+          "smvArrival": 2,
+          "smvDeparture": 8,
+          "agvArrival": 6,
+          "agvDeparture": 8,
+          "start": 6,
+          "end": 8
+        },
+        {
+          "id": "I2",
+          "direction": "import",
+          "smv": "SMV-2",
+          "agv": "AGV-1",
+          "lane": "L1-1",
+          "smvArrival": 9,
+          "smvDeparture": 11,
+          "agvArrival": 8,
+          "agvDeparture": 11,
+          "start": 9,
+          "end": 11
+        },
+        {
+          "id": "E3",
+          "direction": "export",
+          "smv": "SMV-1",
+          "agv": "AGV-1",
+          "lane": "L2-1",
+          "smvArrival": 15,
+          "smvDeparture": 17,
+          "agvArrival": 12,
+          "agvDeparture": 17,
+          "start": 15,
+          "end": 17
+        },
+        {
+          "id": "I3",
+          "direction": "import",
+          "smv": "SMV-1",
+          "agv": "AGV-2",
+          "lane": "L1-1",
+          "smvArrival": 18,
+          "smvDeparture": 20,
+          "agvArrival": 14,
+          "agvDeparture": 20,
+          "start": 18,
+          "end": 20
+        },
+        {
+          "id": "E4",
+          "direction": "export",
+          "smv": "SMV-2",
+          "agv": "AGV-2",
+          "lane": "L2-1",
+          "smvArrival": 21,
+          "smvDeparture": 23,
+          "agvArrival": 21,
+          "agvDeparture": 23,
+          "start": 21,
+          "end": 23
+        },
+        {
+          "id": "I4",
+          "direction": "import",
+          "smv": "SMV-2",
+          "agv": "AGV-1",
+          "lane": "L1-1",
+          "smvArrival": 24,
+          "smvDeparture": 26,
+          "agvArrival": 23,
+          "agvDeparture": 26,
+          "start": 24,
+          "end": 26
+        },
+        {
+          "id": "E5",
+          "direction": "export",
+          "smv": "SMV-1",
+          "agv": "AGV-1",
+          "lane": "L2-1",
+          "smvArrival": 30,
+          "smvDeparture": 32,
+          "agvArrival": 27,
+          "agvDeparture": 32,
+          "start": 30,
+          "end": 32
+        },
+        {
+          "id": "I5",
+          "direction": "import",
+          "smv": "SMV-1",
+          "agv": "AGV-2",
+          "lane": "L1-1",
+          "smvArrival": 33,
+          "smvDeparture": 35,
+          "agvArrival": 29,
+          "agvDeparture": 35,
+          "start": 33,
+          "end": 35
+        },
+        {
+          "id": "E6",
+          "direction": "export",
+          "smv": "SMV-2",
+          "agv": "AGV-2",
+          "lane": "L2-1",
+          "smvArrival": 36,
+          "smvDeparture": 38,
+          "agvArrival": 36,
+          "agvDeparture": 38,
+          "start": 36,
+          "end": 38
+        },
+        {
+          "id": "I6",
+          "direction": "import",
+          "smv": "SMV-2",
+          "agv": "AGV-1",
+          "lane": "L1-1",
+          "smvArrival": 39,
+          "smvDeparture": 41,
+          "agvArrival": 38,
+          "agvDeparture": 41,
+          "start": 39,
+          "end": 41
+        }
+      ],
+      "oracleRows": [
+        {
+          "id": "E1",
+          "direction": "export",
+          "smv": "SMV-1",
+          "agv": "AGV-1",
+          "lane": "L2-1",
+          "smvArrival": 0,
+          "smvDeparture": 2,
+          "agvArrival": 0,
+          "agvDeparture": 2,
+          "start": 0,
+          "end": 2
+        },
+        {
+          "id": "I1",
+          "direction": "import",
+          "smv": "SMV-1",
+          "agv": "AGV-2",
+          "lane": "L1-1",
+          "smvArrival": 3,
+          "smvDeparture": 5,
+          "agvArrival": 3,
+          "agvDeparture": 5,
+          "start": 3,
+          "end": 5
+        },
+        {
+          "id": "E2",
+          "direction": "export",
+          "smv": "SMV-2",
+          "agv": "AGV-2",
+          "lane": "L2-1",
+          "smvArrival": 6,
+          "smvDeparture": 8,
+          "agvArrival": 6,
+          "agvDeparture": 8,
+          "start": 6,
+          "end": 8
+        },
+        {
+          "id": "I2",
+          "direction": "import",
+          "smv": "SMV-2",
+          "agv": "AGV-1",
+          "lane": "L1-1",
+          "smvArrival": 9,
+          "smvDeparture": 11,
+          "agvArrival": 9,
+          "agvDeparture": 11,
+          "start": 9,
+          "end": 11
+        },
+        {
+          "id": "E3",
+          "direction": "export",
+          "smv": "SMV-1",
+          "agv": "AGV-1",
+          "lane": "L2-1",
+          "smvArrival": 15,
+          "smvDeparture": 17,
+          "agvArrival": 15,
+          "agvDeparture": 17,
+          "start": 15,
+          "end": 17
+        },
+        {
+          "id": "I3",
+          "direction": "import",
+          "smv": "SMV-1",
+          "agv": "AGV-2",
+          "lane": "L1-1",
+          "smvArrival": 18,
+          "smvDeparture": 20,
+          "agvArrival": 18,
+          "agvDeparture": 20,
+          "start": 18,
+          "end": 20
+        },
+        {
+          "id": "E4",
+          "direction": "export",
+          "smv": "SMV-2",
+          "agv": "AGV-2",
+          "lane": "L2-1",
+          "smvArrival": 21,
+          "smvDeparture": 23,
+          "agvArrival": 21,
+          "agvDeparture": 23,
+          "start": 21,
+          "end": 23
+        },
+        {
+          "id": "I4",
+          "direction": "import",
+          "smv": "SMV-2",
+          "agv": "AGV-1",
+          "lane": "L1-1",
+          "smvArrival": 24,
+          "smvDeparture": 26,
+          "agvArrival": 24,
+          "agvDeparture": 26,
+          "start": 24,
+          "end": 26
+        },
+        {
+          "id": "E5",
+          "direction": "export",
+          "smv": "SMV-1",
+          "agv": "AGV-1",
+          "lane": "L2-1",
+          "smvArrival": 30,
+          "smvDeparture": 32,
+          "agvArrival": 30,
+          "agvDeparture": 32,
+          "start": 30,
+          "end": 32
+        },
+        {
+          "id": "I5",
+          "direction": "import",
+          "smv": "SMV-1",
+          "agv": "AGV-2",
+          "lane": "L1-1",
+          "smvArrival": 33,
+          "smvDeparture": 35,
+          "agvArrival": 33,
+          "agvDeparture": 35,
+          "start": 33,
+          "end": 35
+        },
+        {
+          "id": "E6",
+          "direction": "export",
+          "smv": "SMV-2",
+          "agv": "AGV-2",
+          "lane": "L2-1",
+          "smvArrival": 36,
+          "smvDeparture": 38,
+          "agvArrival": 36,
+          "agvDeparture": 38,
+          "start": 36,
+          "end": 38
+        },
+        {
+          "id": "I6",
+          "direction": "import",
+          "smv": "SMV-2",
+          "agv": "AGV-1",
+          "lane": "L1-1",
+          "smvArrival": 39,
+          "smvDeparture": 41,
+          "agvArrival": 39,
+          "agvDeparture": 41,
+          "start": 39,
+          "end": 41
+        }
+      ]
+    },
+    {
+      "name": "T0 modified to 3",
+      "config": {
+        "pairs": 6,
+        "smvs": 2,
+        "agvs": 2,
+        "importLanes": 1,
+        "exportLanes": 1,
+        "T0": 3,
+        "T1": 10,
+        "T2": 1,
+        "T3": 6,
+        "T4": 1,
+        "nodeLimit": 2000000,
+        "timeLimitSec": 30
+      },
+      "cmax": 49,
+      "waiting": 28,
+      "solverStatus": "optimal",
+      "productionNodes": 7,
+      "trials": [
+        {
+          "horizon": 81,
+          "status": "feasible",
+          "nodes": 1,
+          "elapsedMs": 1843.5120410000004
+        },
+        {
+          "horizon": 60,
+          "status": "feasible",
+          "nodes": 1,
+          "elapsedMs": 1071.409458
+        },
+        {
+          "horizon": 50,
+          "status": "feasible",
+          "nodes": 1,
+          "elapsedMs": 111.79104199999983
+        },
+        {
+          "horizon": 45,
+          "status": "infeasible",
+          "nodes": 1,
+          "elapsedMs": 75.60125000000062
+        },
+        {
+          "horizon": 47,
+          "status": "infeasible",
+          "nodes": 1,
+          "elapsedMs": 83.5621659999997
+        },
+        {
+          "horizon": 48,
+          "status": "infeasible",
+          "nodes": 1,
+          "elapsedMs": 88.44325000000026
+        },
+        {
+          "horizon": 49,
+          "status": "feasible",
+          "nodes": 1,
+          "elapsedMs": 93.96933400000034
+        }
+      ],
+      "independentBelow": {
+        "feasible": false,
+        "limited": false,
+        "complete": true,
+        "nodes": 50,
+        "dominated": 3,
+        "pruned": 23,
+        "memoGroups": 16,
+        "elapsedMs": 0.5795000000007349
+      },
+      "independentAt": {
+        "feasible": true,
+        "limited": false,
+        "complete": true,
+        "nodes": 66,
+        "dominated": 6,
+        "pruned": 26,
+        "memoGroups": 19,
+        "elapsedMs": 0.9316669999998339
+      },
+      "audit": {
+        "passed": true,
+        "waitingDeviceMinutes": 28,
+        "tasks": 12
+      },
+      "rows": [
+        {
+          "id": "E1",
+          "direction": "export",
+          "smv": "SMV-1",
+          "agv": "AGV-1",
+          "lane": "L2-1",
+          "smvArrival": 0,
+          "smvDeparture": 3,
+          "agvArrival": 0,
+          "agvDeparture": 3,
+          "start": 0,
+          "end": 3
+        },
+        {
+          "id": "I1",
+          "direction": "import",
+          "smv": "SMV-1",
+          "agv": "AGV-2",
+          "lane": "L1-1",
+          "smvArrival": 4,
+          "smvDeparture": 7,
+          "agvArrival": 0,
+          "agvDeparture": 7,
+          "start": 4,
+          "end": 7
+        },
+        {
+          "id": "E2",
+          "direction": "export",
+          "smv": "SMV-2",
+          "agv": "AGV-2",
+          "lane": "L2-1",
+          "smvArrival": 3,
+          "smvDeparture": 11,
+          "agvArrival": 8,
+          "agvDeparture": 11,
+          "start": 8,
+          "end": 11
+        },
+        {
+          "id": "I2",
+          "direction": "import",
+          "smv": "SMV-2",
+          "agv": "AGV-1",
+          "lane": "L1-1",
+          "smvArrival": 12,
+          "smvDeparture": 15,
+          "agvArrival": 9,
+          "agvDeparture": 15,
+          "start": 12,
+          "end": 15
+        },
+        {
+          "id": "E3",
+          "direction": "export",
+          "smv": "SMV-1",
+          "agv": "AGV-1",
+          "lane": "L2-1",
+          "smvArrival": 17,
+          "smvDeparture": 20,
+          "agvArrival": 16,
+          "agvDeparture": 20,
+          "start": 17,
+          "end": 20
+        },
+        {
+          "id": "I3",
+          "direction": "import",
+          "smv": "SMV-1",
+          "agv": "AGV-2",
+          "lane": "L1-1",
+          "smvArrival": 21,
+          "smvDeparture": 24,
+          "agvArrival": 17,
+          "agvDeparture": 24,
+          "start": 21,
+          "end": 24
+        },
+        {
+          "id": "E4",
+          "direction": "export",
+          "smv": "SMV-2",
+          "agv": "AGV-2",
+          "lane": "L2-1",
+          "smvArrival": 25,
+          "smvDeparture": 28,
+          "agvArrival": 25,
+          "agvDeparture": 28,
+          "start": 25,
+          "end": 28
+        },
+        {
+          "id": "I4",
+          "direction": "import",
+          "smv": "SMV-2",
+          "agv": "AGV-1",
+          "lane": "L1-1",
+          "smvArrival": 29,
+          "smvDeparture": 32,
+          "agvArrival": 26,
+          "agvDeparture": 32,
+          "start": 29,
+          "end": 32
+        },
+        {
+          "id": "E5",
+          "direction": "export",
+          "smv": "SMV-1",
+          "agv": "AGV-1",
+          "lane": "L2-1",
+          "smvArrival": 34,
+          "smvDeparture": 37,
+          "agvArrival": 33,
+          "agvDeparture": 37,
+          "start": 34,
+          "end": 37
+        },
+        {
+          "id": "I5",
+          "direction": "import",
+          "smv": "SMV-1",
+          "agv": "AGV-2",
+          "lane": "L1-1",
+          "smvArrival": 38,
+          "smvDeparture": 41,
+          "agvArrival": 34,
+          "agvDeparture": 41,
+          "start": 38,
+          "end": 41
+        },
+        {
+          "id": "E6",
+          "direction": "export",
+          "smv": "SMV-2",
+          "agv": "AGV-2",
+          "lane": "L2-1",
+          "smvArrival": 42,
+          "smvDeparture": 45,
+          "agvArrival": 42,
+          "agvDeparture": 45,
+          "start": 42,
+          "end": 45
+        },
+        {
+          "id": "I6",
+          "direction": "import",
+          "smv": "SMV-2",
+          "agv": "AGV-1",
+          "lane": "L1-1",
+          "smvArrival": 46,
+          "smvDeparture": 49,
+          "agvArrival": 43,
+          "agvDeparture": 49,
+          "start": 46,
+          "end": 49
+        }
+      ],
+      "oracleRows": [
+        {
+          "id": "E1",
+          "direction": "export",
+          "smv": "SMV-1",
+          "agv": "AGV-1",
+          "lane": "L2-1",
+          "smvArrival": 0,
+          "smvDeparture": 3,
+          "agvArrival": 0,
+          "agvDeparture": 3,
+          "start": 0,
+          "end": 3
+        },
+        {
+          "id": "I1",
+          "direction": "import",
+          "smv": "SMV-1",
+          "agv": "AGV-2",
+          "lane": "L1-1",
+          "smvArrival": 4,
+          "smvDeparture": 7,
+          "agvArrival": 4,
+          "agvDeparture": 7,
+          "start": 4,
+          "end": 7
+        },
+        {
+          "id": "E2",
+          "direction": "export",
+          "smv": "SMV-2",
+          "agv": "AGV-2",
+          "lane": "L2-1",
+          "smvArrival": 8,
+          "smvDeparture": 11,
+          "agvArrival": 8,
+          "agvDeparture": 11,
+          "start": 8,
+          "end": 11
+        },
+        {
+          "id": "I2",
+          "direction": "import",
+          "smv": "SMV-2",
+          "agv": "AGV-1",
+          "lane": "L1-1",
+          "smvArrival": 12,
+          "smvDeparture": 15,
+          "agvArrival": 12,
+          "agvDeparture": 15,
+          "start": 12,
+          "end": 15
+        },
+        {
+          "id": "E3",
+          "direction": "export",
+          "smv": "SMV-1",
+          "agv": "AGV-1",
+          "lane": "L2-1",
+          "smvArrival": 17,
+          "smvDeparture": 20,
+          "agvArrival": 17,
+          "agvDeparture": 20,
+          "start": 17,
+          "end": 20
+        },
+        {
+          "id": "I3",
+          "direction": "import",
+          "smv": "SMV-1",
+          "agv": "AGV-2",
+          "lane": "L1-1",
+          "smvArrival": 21,
+          "smvDeparture": 24,
+          "agvArrival": 21,
+          "agvDeparture": 24,
+          "start": 21,
+          "end": 24
+        },
+        {
+          "id": "E4",
+          "direction": "export",
+          "smv": "SMV-2",
+          "agv": "AGV-2",
+          "lane": "L2-1",
+          "smvArrival": 25,
+          "smvDeparture": 28,
+          "agvArrival": 25,
+          "agvDeparture": 28,
+          "start": 25,
+          "end": 28
+        },
+        {
+          "id": "I4",
+          "direction": "import",
+          "smv": "SMV-2",
+          "agv": "AGV-1",
+          "lane": "L1-1",
+          "smvArrival": 29,
+          "smvDeparture": 32,
+          "agvArrival": 29,
+          "agvDeparture": 32,
+          "start": 29,
+          "end": 32
+        },
+        {
+          "id": "E5",
+          "direction": "export",
+          "smv": "SMV-1",
+          "agv": "AGV-1",
+          "lane": "L2-1",
+          "smvArrival": 34,
+          "smvDeparture": 37,
+          "agvArrival": 34,
+          "agvDeparture": 37,
+          "start": 34,
+          "end": 37
+        },
+        {
+          "id": "I5",
+          "direction": "import",
+          "smv": "SMV-1",
+          "agv": "AGV-2",
+          "lane": "L1-1",
+          "smvArrival": 38,
+          "smvDeparture": 41,
+          "agvArrival": 38,
+          "agvDeparture": 41,
+          "start": 38,
+          "end": 41
+        },
+        {
+          "id": "E6",
+          "direction": "export",
+          "smv": "SMV-2",
+          "agv": "AGV-2",
+          "lane": "L2-1",
+          "smvArrival": 42,
+          "smvDeparture": 45,
+          "agvArrival": 42,
+          "agvDeparture": 45,
+          "start": 42,
+          "end": 45
+        },
+        {
+          "id": "I6",
+          "direction": "import",
+          "smv": "SMV-2",
+          "agv": "AGV-1",
+          "lane": "L1-1",
+          "smvArrival": 46,
+          "smvDeparture": 49,
+          "agvArrival": 46,
+          "agvDeparture": 49,
+          "start": 46,
+          "end": 49
+        }
+      ]
+    },
+    {
+      "name": "one pair one AGV",
+      "config": {
+        "pairs": 1,
+        "smvs": 1,
+        "agvs": 1,
+        "importLanes": 1,
+        "exportLanes": 1,
+        "T0": 2,
+        "T1": 10,
+        "T2": 1,
+        "T3": 6,
+        "T4": 1,
+        "nodeLimit": 2000000,
+        "timeLimitSec": 30
+      },
+      "cmax": 10,
+      "waiting": 5,
+      "solverStatus": "optimal",
+      "productionNodes": 0,
+      "trials": [
+        {
+          "horizon": 7,
+          "status": "infeasible",
+          "nodes": 0,
+          "elapsedMs": 1.1652500000000146
+        },
+        {
+          "horizon": 8,
+          "status": "infeasible",
+          "nodes": 0,
+          "elapsedMs": 0.9160000000001673
+        },
+        {
+          "horizon": 9,
+          "status": "infeasible",
+          "nodes": 0,
+          "elapsedMs": 0.9631250000002183
+        }
+      ],
+      "independentBelow": {
+        "feasible": false,
+        "limited": false,
+        "complete": true,
+        "nodes": 2,
+        "dominated": 0,
+        "pruned": 0,
+        "memoGroups": 2,
+        "elapsedMs": 0.058624999999665306
+      },
+      "independentAt": {
+        "feasible": true,
+        "limited": false,
+        "complete": true,
+        "nodes": 3,
+        "dominated": 0,
+        "pruned": 0,
+        "memoGroups": 2,
+        "elapsedMs": 0.03566599999976461
+      },
+      "audit": {
+        "passed": true,
+        "waitingDeviceMinutes": 5,
+        "tasks": 2
+      },
+      "rows": [
+        {
+          "id": "E1",
+          "direction": "export",
+          "smv": "SMV-1",
+          "agv": "AGV-1",
+          "lane": "L2-1",
+          "smvArrival": 0,
+          "smvDeparture": 2,
+          "agvArrival": 0,
+          "agvDeparture": 2,
+          "start": 0,
+          "end": 2
+        },
+        {
+          "id": "I1",
+          "direction": "import",
+          "smv": "SMV-1",
+          "agv": "AGV-1",
+          "lane": "L1-1",
+          "smvArrival": 3,
+          "smvDeparture": 10,
+          "agvArrival": 8,
+          "agvDeparture": 10,
+          "start": 8,
+          "end": 10
+        }
+      ],
+      "oracleRows": [
+        {
+          "id": "E1",
+          "direction": "export",
+          "smv": "SMV-1",
+          "agv": "AGV-1",
+          "lane": "L2-1",
+          "smvArrival": 0,
+          "smvDeparture": 2,
+          "agvArrival": 0,
+          "agvDeparture": 2,
+          "start": 0,
+          "end": 2
+        },
+        {
+          "id": "I1",
+          "direction": "import",
+          "smv": "SMV-1",
+          "agv": "AGV-1",
+          "lane": "L1-1",
+          "smvArrival": 8,
+          "smvDeparture": 10,
+          "agvArrival": 8,
+          "agvDeparture": 10,
+          "start": 8,
+          "end": 10
+        }
+      ]
+    },
+    {
+      "name": "one pair two mandatory AGVs",
+      "config": {
+        "pairs": 1,
+        "smvs": 1,
+        "agvs": 2,
+        "importLanes": 1,
+        "exportLanes": 1,
+        "T0": 2,
+        "T1": 10,
+        "T2": 1,
+        "T3": 6,
+        "T4": 1,
+        "nodeLimit": 2000000,
+        "timeLimitSec": 30
+      },
+      "cmax": 5,
+      "waiting": 3,
+      "solverStatus": "optimal",
+      "productionNodes": 1,
+      "trials": [
+        {
+          "horizon": 7,
+          "status": "feasible",
+          "nodes": 1,
+          "elapsedMs": 7.728165999999874
+        }
+      ],
+      "independentBelow": {
+        "feasible": false,
+        "limited": false,
+        "complete": true,
+        "nodes": 1,
+        "dominated": 0,
+        "pruned": 1,
+        "memoGroups": 0,
+        "elapsedMs": 0.03654199999982666
+      },
+      "independentAt": {
+        "feasible": true,
+        "limited": false,
+        "complete": true,
+        "nodes": 3,
+        "dominated": 0,
+        "pruned": 0,
+        "memoGroups": 2,
+        "elapsedMs": 0.0560830000003989
+      },
+      "audit": {
+        "passed": true,
+        "waitingDeviceMinutes": 3,
+        "tasks": 2
+      },
+      "rows": [
+        {
+          "id": "E1",
+          "direction": "export",
+          "smv": "SMV-1",
+          "agv": "AGV-1",
+          "lane": "L2-1",
+          "smvArrival": 0,
+          "smvDeparture": 2,
+          "agvArrival": 0,
+          "agvDeparture": 2,
+          "start": 0,
+          "end": 2
+        },
+        {
+          "id": "I1",
+          "direction": "import",
+          "smv": "SMV-1",
+          "agv": "AGV-2",
+          "lane": "L1-1",
+          "smvArrival": 3,
+          "smvDeparture": 5,
+          "agvArrival": 0,
+          "agvDeparture": 5,
+          "start": 3,
+          "end": 5
+        }
+      ],
+      "oracleRows": [
+        {
+          "id": "E1",
+          "direction": "export",
+          "smv": "SMV-1",
+          "agv": "AGV-1",
+          "lane": "L2-1",
+          "smvArrival": 0,
+          "smvDeparture": 2,
+          "agvArrival": 0,
+          "agvDeparture": 2,
+          "start": 0,
+          "end": 2
+        },
+        {
+          "id": "I1",
+          "direction": "import",
+          "smv": "SMV-1",
+          "agv": "AGV-2",
+          "lane": "L1-1",
+          "smvArrival": 3,
+          "smvDeparture": 5,
+          "agvArrival": 3,
+          "agvDeparture": 5,
+          "start": 3,
+          "end": 5
+        }
+      ]
+    },
+    {
+      "name": "two pairs one each",
+      "config": {
+        "pairs": 2,
+        "smvs": 1,
+        "agvs": 1,
+        "importLanes": 1,
+        "exportLanes": 1,
+        "T0": 2,
+        "T1": 10,
+        "T2": 1,
+        "T3": 6,
+        "T4": 1,
+        "nodeLimit": 2000000,
+        "timeLimitSec": 30
+      },
+      "cmax": 30,
+      "waiting": 19,
+      "solverStatus": "optimal",
+      "productionNodes": 0,
+      "trials": [
+        {
+          "horizon": 24,
+          "status": "infeasible",
+          "nodes": 0,
+          "elapsedMs": 6.175540999999612
+        },
+        {
+          "horizon": 27,
+          "status": "infeasible",
+          "nodes": 0,
+          "elapsedMs": 10.868875000000116
+        },
+        {
+          "horizon": 28,
+          "status": "infeasible",
+          "nodes": 0,
+          "elapsedMs": 10.855125000000044
+        },
+        {
+          "horizon": 29,
+          "status": "infeasible",
+          "nodes": 0,
+          "elapsedMs": 22.017749999999978
+        }
+      ],
+      "independentBelow": {
+        "feasible": false,
+        "limited": false,
+        "complete": true,
+        "nodes": 4,
+        "dominated": 0,
+        "pruned": 0,
+        "memoGroups": 4,
+        "elapsedMs": 0.08633300000019517
+      },
+      "independentAt": {
+        "feasible": true,
+        "limited": false,
+        "complete": true,
+        "nodes": 5,
+        "dominated": 0,
+        "pruned": 0,
+        "memoGroups": 4,
+        "elapsedMs": 0.08441700000003038
+      },
+      "audit": {
+        "passed": true,
+        "waitingDeviceMinutes": 19,
+        "tasks": 4
+      },
+      "rows": [
+        {
+          "id": "E1",
+          "direction": "export",
+          "smv": "SMV-1",
+          "agv": "AGV-1",
+          "lane": "L2-1",
+          "smvArrival": 0,
+          "smvDeparture": 2,
+          "agvArrival": 0,
+          "agvDeparture": 2,
+          "start": 0,
+          "end": 2
+        },
+        {
+          "id": "I1",
+          "direction": "import",
+          "smv": "SMV-1",
+          "agv": "AGV-1",
+          "lane": "L1-1",
+          "smvArrival": 3,
+          "smvDeparture": 10,
+          "agvArrival": 8,
+          "agvDeparture": 10,
+          "start": 8,
+          "end": 10
+        },
+        {
+          "id": "E2",
+          "direction": "export",
+          "smv": "SMV-1",
+          "agv": "AGV-1",
+          "lane": "L2-1",
+          "smvArrival": 20,
+          "smvDeparture": 22,
+          "agvArrival": 11,
+          "agvDeparture": 22,
+          "start": 20,
+          "end": 22
+        },
+        {
+          "id": "I2",
+          "direction": "import",
+          "smv": "SMV-1",
+          "agv": "AGV-1",
+          "lane": "L1-1",
+          "smvArrival": 23,
+          "smvDeparture": 30,
+          "agvArrival": 28,
+          "agvDeparture": 30,
+          "start": 28,
+          "end": 30
+        }
+      ],
+      "oracleRows": [
+        {
+          "id": "E1",
+          "direction": "export",
+          "smv": "SMV-1",
+          "agv": "AGV-1",
+          "lane": "L2-1",
+          "smvArrival": 0,
+          "smvDeparture": 2,
+          "agvArrival": 0,
+          "agvDeparture": 2,
+          "start": 0,
+          "end": 2
+        },
+        {
+          "id": "I1",
+          "direction": "import",
+          "smv": "SMV-1",
+          "agv": "AGV-1",
+          "lane": "L1-1",
+          "smvArrival": 8,
+          "smvDeparture": 10,
+          "agvArrival": 8,
+          "agvDeparture": 10,
+          "start": 8,
+          "end": 10
+        },
+        {
+          "id": "E2",
+          "direction": "export",
+          "smv": "SMV-1",
+          "agv": "AGV-1",
+          "lane": "L2-1",
+          "smvArrival": 20,
+          "smvDeparture": 22,
+          "agvArrival": 20,
+          "agvDeparture": 22,
+          "start": 20,
+          "end": 22
+        },
+        {
+          "id": "I2",
+          "direction": "import",
+          "smv": "SMV-1",
+          "agv": "AGV-1",
+          "lane": "L1-1",
+          "smvArrival": 28,
+          "smvDeparture": 30,
+          "agvArrival": 28,
+          "agvDeparture": 30,
+          "start": 28,
+          "end": 30
+        }
+      ]
+    },
+    {
+      "name": "two SMV one AGV",
+      "config": {
+        "pairs": 2,
+        "smvs": 2,
+        "agvs": 1,
+        "importLanes": 1,
+        "exportLanes": 1,
+        "T0": 2,
+        "T1": 10,
+        "T2": 1,
+        "T3": 6,
+        "T4": 1,
+        "nodeLimit": 2000000,
+        "timeLimitSec": 30
+      },
+      "cmax": 21,
+      "waiting": 19,
+      "solverStatus": "optimal",
+      "productionNodes": 1,
+      "trials": [
+        {
+          "horizon": 17,
+          "status": "infeasible",
+          "nodes": 0,
+          "elapsedMs": 3.9752079999998386
+        },
+        {
+          "horizon": 23,
+          "status": "feasible",
+          "nodes": 1,
+          "elapsedMs": 19.119332999999642
+        },
+        {
+          "horizon": 20,
+          "status": "infeasible",
+          "nodes": 0,
+          "elapsedMs": 5.488333999999668
+        },
+        {
+          "horizon": 21,
+          "status": "feasible",
+          "nodes": 0,
+          "elapsedMs": 8.151332999999795
+        }
+      ],
+      "independentBelow": {
+        "feasible": false,
+        "limited": false,
+        "complete": true,
+        "nodes": 4,
+        "dominated": 0,
+        "pruned": 0,
+        "memoGroups": 4,
+        "elapsedMs": 0.09566600000016479
+      },
+      "independentAt": {
+        "feasible": true,
+        "limited": false,
+        "complete": true,
+        "nodes": 5,
+        "dominated": 0,
+        "pruned": 0,
+        "memoGroups": 4,
+        "elapsedMs": 0.22983299999941664
+      },
+      "audit": {
+        "passed": true,
+        "waitingDeviceMinutes": 19,
+        "tasks": 4
+      },
+      "rows": [
+        {
+          "id": "E1",
+          "direction": "export",
+          "smv": "SMV-1",
+          "agv": "AGV-1",
+          "lane": "L2-1",
+          "smvArrival": 0,
+          "smvDeparture": 2,
+          "agvArrival": 0,
+          "agvDeparture": 2,
+          "start": 0,
+          "end": 2
+        },
+        {
+          "id": "I1",
+          "direction": "import",
+          "smv": "SMV-1",
+          "agv": "AGV-1",
+          "lane": "L1-1",
+          "smvArrival": 3,
+          "smvDeparture": 10,
+          "agvArrival": 8,
+          "agvDeparture": 10,
+          "start": 8,
+          "end": 10
+        },
+        {
+          "id": "E2",
+          "direction": "export",
+          "smv": "SMV-2",
+          "agv": "AGV-1",
+          "lane": "L2-1",
+          "smvArrival": 2,
+          "smvDeparture": 13,
+          "agvArrival": 11,
+          "agvDeparture": 13,
+          "start": 11,
+          "end": 13
+        },
+        {
+          "id": "I2",
+          "direction": "import",
+          "smv": "SMV-2",
+          "agv": "AGV-1",
+          "lane": "L1-1",
+          "smvArrival": 14,
+          "smvDeparture": 21,
+          "agvArrival": 19,
+          "agvDeparture": 21,
+          "start": 19,
+          "end": 21
+        }
+      ],
+      "oracleRows": [
+        {
+          "id": "E1",
+          "direction": "export",
+          "smv": "SMV-1",
+          "agv": "AGV-1",
+          "lane": "L2-1",
+          "smvArrival": 0,
+          "smvDeparture": 2,
+          "agvArrival": 0,
+          "agvDeparture": 2,
+          "start": 0,
+          "end": 2
+        },
+        {
+          "id": "I1",
+          "direction": "import",
+          "smv": "SMV-1",
+          "agv": "AGV-1",
+          "lane": "L1-1",
+          "smvArrival": 8,
+          "smvDeparture": 10,
+          "agvArrival": 8,
+          "agvDeparture": 10,
+          "start": 8,
+          "end": 10
+        },
+        {
+          "id": "E2",
+          "direction": "export",
+          "smv": "SMV-2",
+          "agv": "AGV-1",
+          "lane": "L2-1",
+          "smvArrival": 11,
+          "smvDeparture": 13,
+          "agvArrival": 11,
+          "agvDeparture": 13,
+          "start": 11,
+          "end": 13
+        },
+        {
+          "id": "I2",
+          "direction": "import",
+          "smv": "SMV-2",
+          "agv": "AGV-1",
+          "lane": "L1-1",
+          "smvArrival": 19,
+          "smvDeparture": 21,
+          "agvArrival": 19,
+          "agvDeparture": 21,
+          "start": 19,
+          "end": 21
+        }
+      ]
+    },
+    {
+      "name": "more AGV than pairs, all used",
+      "config": {
+        "pairs": 2,
+        "smvs": 2,
+        "agvs": 4,
+        "importLanes": 2,
+        "exportLanes": 2,
+        "T0": 2,
+        "T1": 10,
+        "T2": 1,
+        "T3": 6,
+        "T4": 1,
+        "nodeLimit": 2000000,
+        "timeLimitSec": 30
+      },
+      "cmax": 5,
+      "waiting": 6,
+      "solverStatus": "optimal",
+      "productionNodes": 1,
+      "trials": [
+        {
+          "horizon": 17,
+          "status": "feasible",
+          "nodes": 1,
+          "elapsedMs": 8.005791999999929
+        },
+        {
+          "horizon": 5,
+          "status": "feasible",
+          "nodes": 0,
+          "elapsedMs": 0.7546670000001541
+        }
+      ],
+      "independentBelow": {
+        "feasible": false,
+        "limited": false,
+        "complete": true,
+        "nodes": 1,
+        "dominated": 0,
+        "pruned": 1,
+        "memoGroups": 0,
+        "elapsedMs": 0.00858299999981682
+      },
+      "independentAt": {
+        "feasible": true,
+        "limited": false,
+        "complete": true,
+        "nodes": 5,
+        "dominated": 0,
+        "pruned": 0,
+        "memoGroups": 4,
+        "elapsedMs": 0.15616600000066683
+      },
+      "audit": {
+        "passed": true,
+        "waitingDeviceMinutes": 6,
+        "tasks": 4
+      },
+      "rows": [
+        {
+          "id": "E1",
+          "direction": "export",
+          "smv": "SMV-1",
+          "agv": "AGV-1",
+          "lane": "L2-1",
+          "smvArrival": 0,
+          "smvDeparture": 2,
+          "agvArrival": 0,
+          "agvDeparture": 2,
+          "start": 0,
+          "end": 2
+        },
+        {
+          "id": "E2",
+          "direction": "export",
+          "smv": "SMV-2",
+          "agv": "AGV-2",
+          "lane": "L2-2",
+          "smvArrival": 0,
+          "smvDeparture": 2,
+          "agvArrival": 0,
+          "agvDeparture": 2,
+          "start": 0,
+          "end": 2
+        },
+        {
+          "id": "I1",
+          "direction": "import",
+          "smv": "SMV-1",
+          "agv": "AGV-3",
+          "lane": "L1-1",
+          "smvArrival": 3,
+          "smvDeparture": 5,
+          "agvArrival": 0,
+          "agvDeparture": 5,
+          "start": 3,
+          "end": 5
+        },
+        {
+          "id": "I2",
+          "direction": "import",
+          "smv": "SMV-2",
+          "agv": "AGV-4",
+          "lane": "L1-2",
+          "smvArrival": 3,
+          "smvDeparture": 5,
+          "agvArrival": 0,
+          "agvDeparture": 5,
+          "start": 3,
+          "end": 5
+        }
+      ],
+      "oracleRows": [
+        {
+          "id": "E1",
+          "direction": "export",
+          "smv": "SMV-1",
+          "agv": "AGV-1",
+          "lane": "L2-1",
+          "smvArrival": 0,
+          "smvDeparture": 2,
+          "agvArrival": 0,
+          "agvDeparture": 2,
+          "start": 0,
+          "end": 2
+        },
+        {
+          "id": "E2",
+          "direction": "export",
+          "smv": "SMV-2",
+          "agv": "AGV-2",
+          "lane": "L2-2",
+          "smvArrival": 0,
+          "smvDeparture": 2,
+          "agvArrival": 0,
+          "agvDeparture": 2,
+          "start": 0,
+          "end": 2
+        },
+        {
+          "id": "I1",
+          "direction": "import",
+          "smv": "SMV-1",
+          "agv": "AGV-3",
+          "lane": "L1-1",
+          "smvArrival": 3,
+          "smvDeparture": 5,
+          "agvArrival": 3,
+          "agvDeparture": 5,
+          "start": 3,
+          "end": 5
+        },
+        {
+          "id": "I2",
+          "direction": "import",
+          "smv": "SMV-2",
+          "agv": "AGV-4",
+          "lane": "L1-2",
+          "smvArrival": 3,
+          "smvDeparture": 5,
+          "agvArrival": 3,
+          "agvDeparture": 5,
+          "start": 3,
+          "end": 5
+        }
+      ]
+    },
+    {
+      "name": "asymmetric lane counts",
+      "config": {
+        "pairs": 3,
+        "smvs": 2,
+        "agvs": 3,
+        "importLanes": 1,
+        "exportLanes": 3,
+        "T0": 2,
+        "T1": 4,
+        "T2": 1,
+        "T3": 7,
+        "T4": 1,
+        "nodeLimit": 2000000,
+        "timeLimitSec": 30
+      },
+      "cmax": 14,
+      "waiting": 13,
+      "solverStatus": "optimal",
+      "productionNodes": 3,
+      "trials": [
+        {
+          "horizon": 27,
+          "status": "feasible",
+          "nodes": 1,
+          "elapsedMs": 18.09937500000069
+        },
+        {
+          "horizon": 20,
+          "status": "feasible",
+          "nodes": 1,
+          "elapsedMs": 13.893540999999459
+        },
+        {
+          "horizon": 16,
+          "status": "feasible",
+          "nodes": 1,
+          "elapsedMs": 16.804916999999477
+        },
+        {
+          "horizon": 14,
+          "status": "feasible",
+          "nodes": 0,
+          "elapsedMs": 4.179042000000663
+        }
+      ],
+      "independentBelow": {
+        "feasible": false,
+        "limited": false,
+        "complete": true,
+        "nodes": 1,
+        "dominated": 0,
+        "pruned": 1,
+        "memoGroups": 0,
+        "elapsedMs": 0.008874999999534339
+      },
+      "independentAt": {
+        "feasible": true,
+        "limited": false,
+        "complete": true,
+        "nodes": 8,
+        "dominated": 0,
+        "pruned": 1,
+        "memoGroups": 6,
+        "elapsedMs": 0.1557089999996606
+      },
+      "audit": {
+        "passed": true,
+        "waitingDeviceMinutes": 13,
+        "tasks": 6
+      },
+      "rows": [
+        {
+          "id": "E1",
+          "direction": "export",
+          "smv": "SMV-1",
+          "agv": "AGV-1",
+          "lane": "L2-1",
+          "smvArrival": 0,
+          "smvDeparture": 2,
+          "agvArrival": 0,
+          "agvDeparture": 2,
+          "start": 0,
+          "end": 2
+        },
+        {
+          "id": "E2",
+          "direction": "export",
+          "smv": "SMV-2",
+          "agv": "AGV-2",
+          "lane": "L2-2",
+          "smvArrival": 0,
+          "smvDeparture": 2,
+          "agvArrival": 0,
+          "agvDeparture": 2,
+          "start": 0,
+          "end": 2
+        },
+        {
+          "id": "I1",
+          "direction": "import",
+          "smv": "SMV-1",
+          "agv": "AGV-3",
+          "lane": "L1-1",
+          "smvArrival": 3,
+          "smvDeparture": 5,
+          "agvArrival": 0,
+          "agvDeparture": 5,
+          "start": 3,
+          "end": 5
+        },
+        {
+          "id": "E3",
+          "direction": "export",
+          "smv": "SMV-1",
+          "agv": "AGV-3",
+          "lane": "L2-3",
+          "smvArrival": 9,
+          "smvDeparture": 11,
+          "agvArrival": 6,
+          "agvDeparture": 11,
+          "start": 9,
+          "end": 11
+        },
+        {
+          "id": "I2",
+          "direction": "import",
+          "smv": "SMV-2",
+          "agv": "AGV-1",
+          "lane": "L1-1",
+          "smvArrival": 5,
+          "smvDeparture": 11,
+          "agvArrival": 9,
+          "agvDeparture": 11,
+          "start": 9,
+          "end": 11
+        },
+        {
+          "id": "I3",
+          "direction": "import",
+          "smv": "SMV-1",
+          "agv": "AGV-2",
+          "lane": "L1-1",
+          "smvArrival": 12,
+          "smvDeparture": 14,
+          "agvArrival": 9,
+          "agvDeparture": 14,
+          "start": 12,
+          "end": 14
+        }
+      ],
+      "oracleRows": [
+        {
+          "id": "E1",
+          "direction": "export",
+          "smv": "SMV-1",
+          "agv": "AGV-1",
+          "lane": "L2-1",
+          "smvArrival": 0,
+          "smvDeparture": 2,
+          "agvArrival": 0,
+          "agvDeparture": 2,
+          "start": 0,
+          "end": 2
+        },
+        {
+          "id": "E2",
+          "direction": "export",
+          "smv": "SMV-2",
+          "agv": "AGV-2",
+          "lane": "L2-2",
+          "smvArrival": 0,
+          "smvDeparture": 2,
+          "agvArrival": 0,
+          "agvDeparture": 2,
+          "start": 0,
+          "end": 2
+        },
+        {
+          "id": "I1",
+          "direction": "import",
+          "smv": "SMV-1",
+          "agv": "AGV-3",
+          "lane": "L1-1",
+          "smvArrival": 3,
+          "smvDeparture": 5,
+          "agvArrival": 3,
+          "agvDeparture": 5,
+          "start": 3,
+          "end": 5
+        },
+        {
+          "id": "E3",
+          "direction": "export",
+          "smv": "SMV-1",
+          "agv": "AGV-3",
+          "lane": "L2-3",
+          "smvArrival": 9,
+          "smvDeparture": 11,
+          "agvArrival": 9,
+          "agvDeparture": 11,
+          "start": 9,
+          "end": 11
+        },
+        {
+          "id": "I2",
+          "direction": "import",
+          "smv": "SMV-2",
+          "agv": "AGV-1",
+          "lane": "L1-1",
+          "smvArrival": 9,
+          "smvDeparture": 11,
+          "agvArrival": 9,
+          "agvDeparture": 11,
+          "start": 9,
+          "end": 11
+        },
+        {
+          "id": "I3",
+          "direction": "import",
+          "smv": "SMV-1",
+          "agv": "AGV-2",
+          "lane": "L1-1",
+          "smvArrival": 12,
+          "smvDeparture": 14,
+          "agvArrival": 12,
+          "agvDeparture": 14,
+          "start": 12,
+          "end": 14
+        }
+      ]
+    },
+    {
+      "name": "all resources mandatory",
+      "config": {
+        "pairs": 3,
+        "smvs": 3,
+        "agvs": 4,
+        "importLanes": 3,
+        "exportLanes": 3,
+        "T0": 1,
+        "T1": 2,
+        "T2": 3,
+        "T3": 4,
+        "T4": 5,
+        "nodeLimit": 2000000,
+        "timeLimitSec": 30
+      },
+      "cmax": 6,
+      "waiting": 6,
+      "solverStatus": "optimal",
+      "productionNodes": 2,
+      "trials": [
+        {
+          "horizon": 16,
+          "status": "feasible",
+          "nodes": 1,
+          "elapsedMs": 9.516500000000633
+        },
+        {
+          "horizon": 7,
+          "status": "feasible",
+          "nodes": 1,
+          "elapsedMs": 7.4210000000002765
+        },
+        {
+          "horizon": 5,
+          "status": "infeasible",
+          "nodes": 0,
+          "elapsedMs": 0.6039579999996931
+        },
+        {
+          "horizon": 6,
+          "status": "feasible",
+          "nodes": 0,
+          "elapsedMs": 1.3427499999997963
+        }
+      ],
+      "independentBelow": {
+        "feasible": false,
+        "limited": false,
+        "complete": true,
+        "nodes": 14,
+        "dominated": 2,
+        "pruned": 4,
+        "memoGroups": 8,
+        "elapsedMs": 0.32670799999959854
+      },
+      "independentAt": {
+        "feasible": true,
+        "limited": false,
+        "complete": true,
+        "nodes": 9,
+        "dominated": 0,
+        "pruned": 1,
+        "memoGroups": 6,
+        "elapsedMs": 0.47449999999935244
+      },
+      "audit": {
+        "passed": true,
+        "waitingDeviceMinutes": 6,
+        "tasks": 6
+      },
+      "rows": [
+        {
+          "id": "E1",
+          "direction": "export",
+          "smv": "SMV-1",
+          "agv": "AGV-1",
+          "lane": "L2-1",
+          "smvArrival": 0,
+          "smvDeparture": 1,
+          "agvArrival": 0,
+          "agvDeparture": 1,
+          "start": 0,
+          "end": 1
+        },
+        {
+          "id": "E2",
+          "direction": "export",
+          "smv": "SMV-2",
+          "agv": "AGV-2",
+          "lane": "L2-2",
+          "smvArrival": 0,
+          "smvDeparture": 1,
+          "agvArrival": 0,
+          "agvDeparture": 1,
+          "start": 0,
+          "end": 1
+        },
+        {
+          "id": "E3",
+          "direction": "export",
+          "smv": "SMV-3",
+          "agv": "AGV-3",
+          "lane": "L2-3",
+          "smvArrival": 0,
+          "smvDeparture": 1,
+          "agvArrival": 0,
+          "agvDeparture": 1,
+          "start": 0,
+          "end": 1
+        },
+        {
+          "id": "I1",
+          "direction": "import",
+          "smv": "SMV-1",
+          "agv": "AGV-1",
+          "lane": "L1-1",
+          "smvArrival": 4,
+          "smvDeparture": 6,
+          "agvArrival": 5,
+          "agvDeparture": 6,
+          "start": 5,
+          "end": 6
+        },
+        {
+          "id": "I2",
+          "direction": "import",
+          "smv": "SMV-2",
+          "agv": "AGV-2",
+          "lane": "L1-2",
+          "smvArrival": 4,
+          "smvDeparture": 6,
+          "agvArrival": 5,
+          "agvDeparture": 6,
+          "start": 5,
+          "end": 6
+        },
+        {
+          "id": "I3",
+          "direction": "import",
+          "smv": "SMV-3",
+          "agv": "AGV-4",
+          "lane": "L1-3",
+          "smvArrival": 4,
+          "smvDeparture": 5,
+          "agvArrival": 0,
+          "agvDeparture": 5,
+          "start": 4,
+          "end": 5
+        }
+      ],
+      "oracleRows": [
+        {
+          "id": "E1",
+          "direction": "export",
+          "smv": "SMV-1",
+          "agv": "AGV-1",
+          "lane": "L2-1",
+          "smvArrival": 0,
+          "smvDeparture": 1,
+          "agvArrival": 0,
+          "agvDeparture": 1,
+          "start": 0,
+          "end": 1
+        },
+        {
+          "id": "E2",
+          "direction": "export",
+          "smv": "SMV-2",
+          "agv": "AGV-2",
+          "lane": "L2-2",
+          "smvArrival": 0,
+          "smvDeparture": 1,
+          "agvArrival": 0,
+          "agvDeparture": 1,
+          "start": 0,
+          "end": 1
+        },
+        {
+          "id": "E3",
+          "direction": "export",
+          "smv": "SMV-3",
+          "agv": "AGV-3",
+          "lane": "L2-3",
+          "smvArrival": 0,
+          "smvDeparture": 1,
+          "agvArrival": 0,
+          "agvDeparture": 1,
+          "start": 0,
+          "end": 1
+        },
+        {
+          "id": "I1",
+          "direction": "import",
+          "smv": "SMV-1",
+          "agv": "AGV-4",
+          "lane": "L1-1",
+          "smvArrival": 4,
+          "smvDeparture": 5,
+          "agvArrival": 4,
+          "agvDeparture": 5,
+          "start": 4,
+          "end": 5
+        },
+        {
+          "id": "I2",
+          "direction": "import",
+          "smv": "SMV-2",
+          "agv": "AGV-1",
+          "lane": "L1-2",
+          "smvArrival": 5,
+          "smvDeparture": 6,
+          "agvArrival": 5,
+          "agvDeparture": 6,
+          "start": 5,
+          "end": 6
+        },
+        {
+          "id": "I3",
+          "direction": "import",
+          "smv": "SMV-3",
+          "agv": "AGV-2",
+          "lane": "L1-3",
+          "smvArrival": 5,
+          "smvDeparture": 6,
+          "agvArrival": 5,
+          "agvDeparture": 6,
+          "start": 5,
+          "end": 6
+        }
+      ]
+    },
+    {
+      "name": "modified short cycles",
+      "config": {
+        "pairs": 4,
+        "smvs": 2,
+        "agvs": 3,
+        "importLanes": 2,
+        "exportLanes": 2,
+        "T0": 1,
+        "T1": 3,
+        "T2": 1,
+        "T3": 4,
+        "T4": 2,
+        "nodeLimit": 2000000,
+        "timeLimitSec": 30
+      },
+      "cmax": 12,
+      "waiting": 10,
+      "solverStatus": "optimal",
+      "productionNodes": 4,
+      "trials": [
+        {
+          "horizon": 20,
+          "status": "feasible",
+          "nodes": 1,
+          "elapsedMs": 12.721916999999848
+        },
+        {
+          "horizon": 14,
+          "status": "feasible",
+          "nodes": 1,
+          "elapsedMs": 10.303124999999454
+        },
+        {
+          "horizon": 11,
+          "status": "infeasible",
+          "nodes": 1,
+          "elapsedMs": 8.77008300000034
+        },
+        {
+          "horizon": 12,
+          "status": "feasible",
+          "nodes": 1,
+          "elapsedMs": 6.527332999999999
+        }
+      ],
+      "independentBelow": {
+        "feasible": false,
+        "limited": false,
+        "complete": true,
+        "nodes": 113,
+        "dominated": 10,
+        "pruned": 66,
+        "memoGroups": 29,
+        "elapsedMs": 1.36712499999976
+      },
+      "independentAt": {
+        "feasible": true,
+        "limited": false,
+        "complete": true,
+        "nodes": 10,
+        "dominated": 0,
+        "pruned": 0,
+        "memoGroups": 8,
+        "elapsedMs": 0.18624999999974534
+      },
+      "audit": {
+        "passed": true,
+        "waitingDeviceMinutes": 10,
+        "tasks": 8
+      },
+      "rows": [
+        {
+          "id": "E1",
+          "direction": "export",
+          "smv": "SMV-1",
+          "agv": "AGV-1",
+          "lane": "L2-1",
+          "smvArrival": 0,
+          "smvDeparture": 1,
+          "agvArrival": 0,
+          "agvDeparture": 1,
+          "start": 0,
+          "end": 1
+        },
+        {
+          "id": "I1",
+          "direction": "import",
+          "smv": "SMV-1",
+          "agv": "AGV-3",
+          "lane": "L1-1",
+          "smvArrival": 2,
+          "smvDeparture": 3,
+          "agvArrival": 0,
+          "agvDeparture": 3,
+          "start": 2,
+          "end": 3
+        },
+        {
+          "id": "E2",
+          "direction": "export",
+          "smv": "SMV-2",
+          "agv": "AGV-2",
+          "lane": "L2-2",
+          "smvArrival": 0,
+          "smvDeparture": 1,
+          "agvArrival": 0,
+          "agvDeparture": 1,
+          "start": 0,
+          "end": 1
+        },
+        {
+          "id": "I2",
+          "direction": "import",
+          "smv": "SMV-2",
+          "agv": "AGV-1",
+          "lane": "L1-2",
+          "smvArrival": 2,
+          "smvDeparture": 6,
+          "agvArrival": 5,
+          "agvDeparture": 6,
+          "start": 5,
+          "end": 6
+        },
+        {
+          "id": "E3",
+          "direction": "export",
+          "smv": "SMV-1",
+          "agv": "AGV-3",
+          "lane": "L2-1",
+          "smvArrival": 6,
+          "smvDeparture": 7,
+          "agvArrival": 5,
+          "agvDeparture": 7,
+          "start": 6,
+          "end": 7
+        },
+        {
+          "id": "I3",
+          "direction": "import",
+          "smv": "SMV-1",
+          "agv": "AGV-2",
+          "lane": "L1-1",
+          "smvArrival": 8,
+          "smvDeparture": 9,
+          "agvArrival": 5,
+          "agvDeparture": 9,
+          "start": 8,
+          "end": 9
+        },
+        {
+          "id": "E4",
+          "direction": "export",
+          "smv": "SMV-2",
+          "agv": "AGV-1",
+          "lane": "L2-1",
+          "smvArrival": 9,
+          "smvDeparture": 10,
+          "agvArrival": 8,
+          "agvDeparture": 10,
+          "start": 9,
+          "end": 10
+        },
+        {
+          "id": "I4",
+          "direction": "import",
+          "smv": "SMV-2",
+          "agv": "AGV-3",
+          "lane": "L1-1",
+          "smvArrival": 11,
+          "smvDeparture": 12,
+          "agvArrival": 11,
+          "agvDeparture": 12,
+          "start": 11,
+          "end": 12
+        }
+      ],
+      "oracleRows": [
+        {
+          "id": "E1",
+          "direction": "export",
+          "smv": "SMV-1",
+          "agv": "AGV-1",
+          "lane": "L2-1",
+          "smvArrival": 0,
+          "smvDeparture": 1,
+          "agvArrival": 0,
+          "agvDeparture": 1,
+          "start": 0,
+          "end": 1
+        },
+        {
+          "id": "E2",
+          "direction": "export",
+          "smv": "SMV-2",
+          "agv": "AGV-2",
+          "lane": "L2-2",
+          "smvArrival": 0,
+          "smvDeparture": 1,
+          "agvArrival": 0,
+          "agvDeparture": 1,
+          "start": 0,
+          "end": 1
+        },
+        {
+          "id": "I1",
+          "direction": "import",
+          "smv": "SMV-1",
+          "agv": "AGV-3",
+          "lane": "L1-1",
+          "smvArrival": 2,
+          "smvDeparture": 3,
+          "agvArrival": 2,
+          "agvDeparture": 3,
+          "start": 2,
+          "end": 3
+        },
+        {
+          "id": "I2",
+          "direction": "import",
+          "smv": "SMV-2",
+          "agv": "AGV-1",
+          "lane": "L1-1",
+          "smvArrival": 5,
+          "smvDeparture": 6,
+          "agvArrival": 5,
+          "agvDeparture": 6,
+          "start": 5,
+          "end": 6
+        },
+        {
+          "id": "E3",
+          "direction": "export",
+          "smv": "SMV-1",
+          "agv": "AGV-3",
+          "lane": "L2-1",
+          "smvArrival": 6,
+          "smvDeparture": 7,
+          "agvArrival": 6,
+          "agvDeparture": 7,
+          "start": 6,
+          "end": 7
+        },
+        {
+          "id": "I3",
+          "direction": "import",
+          "smv": "SMV-1",
+          "agv": "AGV-2",
+          "lane": "L1-1",
+          "smvArrival": 8,
+          "smvDeparture": 9,
+          "agvArrival": 8,
+          "agvDeparture": 9,
+          "start": 8,
+          "end": 9
+        },
+        {
+          "id": "E4",
+          "direction": "export",
+          "smv": "SMV-2",
+          "agv": "AGV-1",
+          "lane": "L2-1",
+          "smvArrival": 9,
+          "smvDeparture": 10,
+          "agvArrival": 9,
+          "agvDeparture": 10,
+          "start": 9,
+          "end": 10
+        },
+        {
+          "id": "I4",
+          "direction": "import",
+          "smv": "SMV-2",
+          "agv": "AGV-3",
+          "lane": "L1-2",
+          "smvArrival": 11,
+          "smvDeparture": 12,
+          "agvArrival": 11,
+          "agvDeparture": 12,
+          "start": 11,
+          "end": 12
+        }
+      ]
+    }
+  ],
+  "rejected": [
+    {
+      "patch": {
+        "pairs": 1,
+        "smvs": 2
+      },
+      "message": "原模型要求每台车及每条作业道至少执行一项任务，当前任务数量不足"
+    },
+    {
+      "patch": {
+        "pairs": 1,
+        "agvs": 3
+      },
+      "message": "原模型要求每台车及每条作业道至少执行一项任务，当前任务数量不足"
+    },
+    {
+      "patch": {
+        "pairs": 1,
+        "importLanes": 2
+      },
+      "message": "原模型要求每台车及每条作业道至少执行一项任务，当前任务数量不足"
+    },
+    {
+      "patch": {
+        "pairs": 1,
+        "exportLanes": 2
+      },
+      "message": "原模型要求每台车及每条作业道至少执行一项任务，当前任务数量不足"
+    },
+    {
+      "patch": {
+        "T0": 1.5
+      },
+      "message": "论文实验参数无效 T0"
+    },
+    {
+      "patch": {
+        "T1": 0
+      },
+      "message": "论文实验参数无效 T1"
+    }
+  ]
+}

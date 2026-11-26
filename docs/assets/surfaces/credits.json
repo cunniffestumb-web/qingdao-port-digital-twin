@@ -1,0 +1,78 @@
+{
+  "provider": "Poly Haven",
+  "license": "https://polyhaven.com/license",
+  "apiCredit": "Powered by Poly Haven",
+  "notes": "Local offline surface references; not surveyed Qingdao geometry. Original 1K maps retained.",
+  "assets": [
+    {
+      "asset": "asphalt_02",
+      "role": "Diffuse",
+      "file": "asphalt_02_diff_1k.jpg",
+      "source": "https://dl.polyhaven.org/file/ph-assets/Textures/jpg/1k/asphalt_02/asphalt_02_diff_1k.jpg",
+      "page": "https://polyhaven.com/a/asphalt_02",
+      "license": "CC0-1.0",
+      "sha256": "1aa5ce99f58a625c71d48cfc3e68b65ca85ccb00f39e045c0a928608a0ea25ed",
+      "bytes": 731707
+    },
+    {
+      "asset": "asphalt_02",
+      "role": "nor_gl",
+      "file": "asphalt_02_nor_gl_1k.jpg",
+      "source": "https://dl.polyhaven.org/file/ph-assets/Textures/jpg/1k/asphalt_02/asphalt_02_nor_gl_1k.jpg",
+      "page": "https://polyhaven.com/a/asphalt_02",
+      "license": "CC0-1.0",
+      "sha256": "42a1c381b53204e83a982db2864479a30bc127bbdeebb1006f8ee51bff099df3",
+      "bytes": 1240122
+    },
+    {
+      "asset": "asphalt_02",
+      "role": "Rough",
+      "file": "asphalt_02_rough_1k.jpg",
+      "source": "https://dl.polyhaven.org/file/ph-assets/Textures/jpg/1k/asphalt_02/asphalt_02_rough_1k.jpg",
+      "page": "https://polyhaven.com/a/asphalt_02",
+      "license": "CC0-1.0",
+      "sha256": "70ba3edc65525eb4dc366cf010ca7ae0bd34e0251ff0225c2dad627a873d0712",
+      "bytes": 544032
+    },
+    {
+      "asset": "concrete_floor_worn_001",
+      "role": "Diffuse",
+      "file": "concrete_floor_worn_001_diff_1k.jpg",
+      "source": "https://dl.polyhaven.org/file/ph-assets/Textures/jpg/1k/concrete_floor_worn_001/concrete_floor_worn_001_diff_1k.jpg",
+      "page": "https://polyhaven.com/a/concrete_floor_worn_001",
+      "license": "CC0-1.0",
+      "sha256": "6e40c0fc908f4d66431836f5abe203f3a4eb064e88824378a91a46a26e2f464c",
+      "bytes": 118806
+    },
+    {
+      "asset": "concrete_floor_worn_001",
+      "role": "nor_gl",
+      "file": "concrete_floor_worn_001_nor_gl_1k.jpg",
+      "source": "https://dl.polyhaven.org/file/ph-assets/Textures/jpg/1k/concrete_floor_worn_001/concrete_floor_worn_001_nor_gl_1k.jpg",
+      "page": "https://polyhaven.com/a/concrete_floor_worn_001",
+      "license": "CC0-1.0",
+      "sha256": "523bd94a1be5dd2f11c2ae2b7d7c77445cf5bd9e41604db515a7c8364dcba067",
+      "bytes": 110906
+    },
+    {
+      "asset": "concrete_floor_worn_001",
+      "role": "Rough",
+      "file": "concrete_floor_worn_001_rough_1k.jpg",
+      "source": "https://dl.polyhaven.org/file/ph-assets/Textures/jpg/1k/concrete_floor_worn_001/concrete_floor_worn_001_rough_1k.jpg",
+      "page": "https://polyhaven.com/a/concrete_floor_worn_001",
+      "license": "CC0-1.0",
+      "sha256": "069efe4ca018e0ef61fd8cc9964395ba8272284ae239da68d7f87988e2e9f488",
+      "bytes": 181942
+    },
+    {
+      "asset": "kloofendal_48d_partly_cloudy_puresky",
+      "role": "environment",
+      "file": "kloofendal_48d_partly_cloudy_puresky_1k.hdr",
+      "source": "https://dl.polyhaven.org/file/ph-assets/HDRIs/hdr/1k/kloofendal_48d_partly_cloudy_puresky_1k.hdr",
+      "page": "https://polyhaven.com/a/kloofendal_48d_partly_cloudy_puresky",
+      "license": "CC0-1.0",
+      "sha256": "fd94c84997b8a3c353b62c2125a9b44e19509956986a126e472684432a02d798",
+      "bytes": 1435119
+    }
+  ]
+}
